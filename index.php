@@ -19,8 +19,8 @@ function showPage() {
 	$results = array();
 	$page_id = isset( $_GET['page_id'] ? $_GET['page_id'] : 1;
 	$data = Article::getArticlesByPage( $page_id );
-	$result['articles'] = $data['results'];
-	$result['totalRows'] = $data['totalRows'];
+	$results['articles'] = $data['results'];
+	$results['totalRows'] = $data['totalRows'];
 
 	// get Page title from DB
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
