@@ -12,13 +12,13 @@ define("ADMIN_PASSWORD","ivan");
 // here the required classes
 
 require( CLASS_PATH . "/article.php");
-require( CLASS_PATH . "/page.php");
 require( CLASS_PATH . "/image.php");
 
-function handleException( $exception ) {
+/**function handleException( $exception ) {
   echo "Sorry, a problem occurred. Please try later.";
   error_log( $exception->getMessage() );
 }
  
-set_exception_handler( 'handleException' );
+//set_exception_handler( 'handleException' );
 ?>
+*/

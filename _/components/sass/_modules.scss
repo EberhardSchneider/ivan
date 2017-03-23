@@ -1,0 +1,27 @@
+// ************** HEADER
+
+.side-logo {
+	font-size: 2em;
+}
+
+
+
+
+// SIDE-MENU
+
+
+
+input#open-menu {
+	display: none;
+}
+
+input[type=checkbox]:checked ~ nav {
+	display: block;
+}
+
+
+@media only screen and (min-width: 760 px) {
+	label.open-menu-label {
+		display: none;
+	}
+}

@@ -51,11 +51,11 @@ class Article {
 
 public function __construct( $data = array() ) {
 	if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
-	if ( isset( $data['page_id'])) $this->page_id = (int) $data['page_id'];
+	if ( isset( $data['pageId'])) $this->page_id = (int) $data['pageId'];
 	if ( isset( $data['publicationDate'] ) ) $this->publicationDate = (int) $data['publicationDate'];
-	if ( isset( $data['title'] ) ) $this->title = (int) $data['title'];
-	if ( isset( $data['summary'] ) ) $this->summary = (int) $data['summary'];
-	if ( isset( $data['content'] ) ) $this->content = (int) $data['content'];
+	if ( isset( $data['title'] ) ) $this->title = $data['title'];
+	if ( isset( $data['summary'] ) ) $this->summary = $data['summary'];
+	if ( isset( $data['content'] ) ) $this->content = $data['content'];
 }
 
 /**
@@ -133,12 +133,13 @@ public function getList( $numRows=1000000, $order="publicationDate DESC") {
 * @return Array|false a two element array : result => array,  totalRows => Total number of articles
 */
 
-public function getArticlesByPage( $page = 1, $numRows=1000000, $order="publicationDate DESC") {
+public function getArticlesByPage( $page = 1, $numRows=100000, $order="publicationDate DESC") {
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	$sql = "SELECT SQL_CALC_FOUND_ROWS *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows WHERE page_id=:page_id";
+	$sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE pageId = :pageId ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
 	$st = $conn->prepare( $sql );
 	$st->bindValue(":numRows", $numRows, PDO::PARAM_INT);
-	$st->bindValue(":page_id", $this->page_id, PDO::PARAM_INT);
+	$st->bindValue(":pageId", $page, PDO::PARAM_INT);
+	
 	$st->execute();
 	$list = array();
 

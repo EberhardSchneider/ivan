@@ -5,7 +5,7 @@ session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
-if ( $action != "login" && $action != "logout" && !username) {
+if ( $action != "login" && $action != "logout" && !$username ) {
 	login();
 	exit;
 }
@@ -42,7 +42,7 @@ function login() {
 			$_SESSION['username'] = ADMIN_USERNAME;
 			header( "Location: admin.php");
 		} 
-		else {
+		elseif (isset( $results['errorMessage'])) {
 			// LOGIN failed: error message to user
 			$results['errorMessage'] = "Incorrect username or password";
 			require( TEMPLATE_PATH . "/admin/loginForm.php");
@@ -94,7 +94,7 @@ function newArticle() {
 
 function editArticle() {
 	$results = array();
-	$results['pageTitle'] = "Eintrag bearbeiten"
+	$results['pageTitle'] = "Eintrag bearbeiten";
 	$results['formAction'] = "editArticle";
 
 		if ( isset( $_POST['saveChanges']) ) {
@@ -154,7 +154,7 @@ function listArticles() {
 		if ( $_GET['status'] == "articleDeleted" ) $results['statusMessage'] = "Article deleted.";
 	}
 
-	require( TEMPLATE_PATH . "/admin/listArticles.php")
+	require( TEMPLATE_PATH . "/admin/listArticles.php");
 }
 
 ?>

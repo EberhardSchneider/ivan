@@ -1,0 +1,55 @@
+
+// Small screens
+
+.side-logo p {
+	float: left;
+}
+
+.open-menu-label {
+
+}
+
+.content {
+	position: relative;
+	top: 1em;
+	left: 5%;
+	right: 5%;
+	
+	background-color: red;
+}
+
+nav {
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	top: 10%;
+
+	background-color: #000;
+	color: #fff;
+	z-index: 100;
+
+	ul {
+		position: relative;
+		top: 2em;
+	}
+
+	li {
+		font-size: 2em;
+		height: 3em;
+		width: 100%;
+		position: relative;
+		left: 1em;
+		a {
+
+			color: white;
+			
+		}
+	}
+}
+
+
+
+
+
+
