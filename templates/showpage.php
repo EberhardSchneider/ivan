@@ -3,24 +3,25 @@
 <?php include "templates/include/sidemenu.php"; ?>
 
 <div id="content">
-	<ul id="headlines">
+	<div id="articles">
 
 <?php
 	foreach ($results['articles'] as $article) {  ?>
 
-	<li>
+	<div class="article">
 		<h2>
 			<span class="title"><?php echo htmlspecialchars($article->title); ?></span>
+		</h2>
 			<!-- TODO: show Images (in Template???) -->
 			<div class="content"><?php echo $article->content ?></div>
-		</h2>
+		
 
-	</li>
+	</div>
 <?php
 	}	
 ?>		
 
-	</ul>
+	</div>
 </div>
 
 <?php include "templates/include/footer.php"; ?>

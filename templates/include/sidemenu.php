@@ -20,7 +20,6 @@
 	while ($row = $st->fetch()) {
 ?>
 		<li>
-
 			<a href="index.php?action=showPage&page_id=<?php echo $row['id']; ?> ">
 				<span class="menu-element"><?php echo $row['linkname']; ?></span>
 			</a>

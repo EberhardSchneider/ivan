@@ -57,19 +57,40 @@ body a {
   /* line 25, ../components/sass/_base.scss */
   label.open-menu-label {
     display: none; } }
-/* line 4, ../components/sass/_layout.scss */
-.side-logo p {
-  float: left; }
+/* line 6, ../components/sass/_layout.scss */
+.side-logo {
+  position: fixed;
+  top: 0;
+  height: 2em;
+  width: 100%;
+  z-index: 100;
+  background-color: white; }
 
-/* line 12, ../components/sass/_layout.scss */
-.content {
+/* line 16, ../components/sass/_layout.scss */
+#menu-bar label {
+  position: fixed;
+  top: 2em;
+  height: 2em;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  border-bottom: 5px solid black; }
+
+/* line 28, ../components/sass/_layout.scss */
+#content {
+  top: 4em;
+  position: relative; }
+
+/* line 36, ../components/sass/_layout.scss */
+.article {
   position: relative;
-  top: 1em;
-  left: 5%;
-  right: 5%;
+  margin: 10px;
   background-color: red; }
+/* line 42, ../components/sass/_layout.scss */
+.article p {
+  padding-top: 1em; }
 
-/* line 21, ../components/sass/_layout.scss */
+/* line 47, ../components/sass/_layout.scss */
 nav {
   position: absolute;
   left: 0;
@@ -79,18 +100,18 @@ nav {
   background-color: #000;
   color: #fff;
   z-index: 100; }
-/* line 32, ../components/sass/_layout.scss */
+/* line 58, ../components/sass/_layout.scss */
 nav ul {
   position: relative;
   top: 2em; }
-/* line 37, ../components/sass/_layout.scss */
+/* line 63, ../components/sass/_layout.scss */
 nav li {
   font-size: 2em;
   height: 3em;
   width: 100%;
   position: relative;
   left: 1em; }
-/* line 43, ../components/sass/_layout.scss */
+/* line 69, ../components/sass/_layout.scss */
 nav li a {
   color: white; }
 
@@ -98,15 +119,19 @@ nav li a {
 .side-logo {
   font-size: 2em; }
 
-/* line 14, ../components/sass/_modules.scss */
+/* line 9, ../components/sass/_modules.scss */
+.article {
+  padding: 5px; }
+
+/* line 20, ../components/sass/_modules.scss */
 input#open-menu {
   display: none; }
 
-/* line 18, ../components/sass/_modules.scss */
+/* line 24, ../components/sass/_modules.scss */
 input[type=checkbox]:checked ~ nav {
   display: block; }
 
 @media only screen and (min-width: 760 px) {
-  /* line 24, ../components/sass/_modules.scss */
+  /* line 30, ../components/sass/_modules.scss */
   label.open-menu-label {
     display: none; } }

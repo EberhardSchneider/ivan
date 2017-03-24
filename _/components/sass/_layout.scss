@@ -1,21 +1,47 @@
 
 // Small screens
 
-.side-logo p {
-	float: left;
+// sticky header
+
+.side-logo {
+	position: fixed;
+	top: 0;
+
+	height: 2em;
+	width: 100%;
+	z-index: 100;
+	background-color: white;
 }
 
-.open-menu-label {
-
+#menu-bar label {
+	position: fixed;
+	top: 2em;
+	height: 2em;
+	width: 100%;
+	background-color: white;
+	z-index: 100;
+	border-bottom: 5px solid black;
 }
 
-.content {
+// get content under menu bar
+
+#content {
+	top: 4em;
 	position: relative;
-	top: 1em;
-	left: 5%;
-	right: 5%;
+}
+
+
+
+
+.article {
+	position: relative;
+	margin: 10px;
 	
 	background-color: red;
+
+	p {
+		padding-top: 1em;
+	}
 }
 
 nav {
