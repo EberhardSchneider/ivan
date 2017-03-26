@@ -71,8 +71,16 @@ body a:visited {
 
 /* line 40, ../components/sass/_base.scss */
 nav {
-  display: inline; }
+  display: none; }
 
+@media all and (min-width: 46.8em) {
+  /* line 51, ../components/sass/_base.scss */
+  .open-menu-label {
+    display: none !important; }
+
+  /* line 55, ../components/sass/_base.scss */
+  .nav {
+    display: inline !important; } }
 /* line 6, ../components/sass/_layout.scss */
 .side-logo {
   position: fixed;
@@ -83,17 +91,16 @@ nav {
   background-color: white; }
 
 /* line 16, ../components/sass/_layout.scss */
-nav {
-  display: inline;
+#menu-bar label {
   position: fixed;
-  top: 20%;
-  left: 7%;
-  width: 20%;
-  height: 60%;
-  background-color: gray;
-  color: black; }
+  top: 2em;
+  height: 2em;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  border-bottom: 5px solid black; }
 
-/* line 28, ../components/sass/_layout.scss */
+/* line 26, ../components/sass/_layout.scss */
 .currentPage {
   position: fixed;
   right: 0;
@@ -102,37 +109,53 @@ nav {
   z-index: 200;
   padding: 0.1em; }
 
-/* line 41, ../components/sass/_layout.scss */
+/* line 39, ../components/sass/_layout.scss */
 #content {
-  position: absolute;
-  left: 30%;
-  width: 60%;
-  top: 20%;
-  height: 60%; }
+  top: 1em;
+  position: relative; }
 
-/* line 52, ../components/sass/_layout.scss */
+/* line 47, ../components/sass/_layout.scss */
 .article {
   position: relative;
   margin: 10px; }
 
-/* line 60, ../components/sass/_layout.scss */
+/* line 52, ../components/sass/_layout.scss */
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 4em;
+  background-color: #000;
+  color: #fff;
+  z-index: 100; }
+/* line 63, ../components/sass/_layout.scss */
 nav ul {
   position: relative;
   top: 2em; }
-/* line 65, ../components/sass/_layout.scss */
+/* line 68, ../components/sass/_layout.scss */
 nav li {
-  font-size: 1.5em;
+  font-size: 2em;
   height: 3em;
   width: 100%;
   position: relative;
   left: 1em; }
-
 /* line 74, ../components/sass/_layout.scss */
+nav li a {
+  color: white !important; }
+
+/* line 82, ../components/sass/_layout.scss */
 #footer {
   top: 4em;
   position: relative;
   display: block; }
 
+@media all and (min-width: 46.8em) {
+  /* line 94, ../components/sass/_layout.scss */
+  .nav {
+    background-color: white;
+    color: black;
+    font-size: 3em; } }
 /* line 3, ../components/sass/_modules.scss */
 .side-logo {
   font-size: 2em; }

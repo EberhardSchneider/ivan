@@ -1,0 +1,193 @@
+/* line 5, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+/* line 103, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+/* line 32, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* line 3, ../../components/sass/small-screens/_base.scss */
+body {
+  font-family: 'Monda', sans-serif; }
+/* line 6, ../../components/sass/small-screens/_base.scss */
+body a {
+  text-decoration: none;
+  color: black; }
+/* line 9, ../../components/sass/small-screens/_base.scss */
+body a:visited {
+  color: black; }
+
+/* line 17, ../../components/sass/small-screens/_base.scss */
+.spacerhalfem {
+  position: relative;
+  background-color: #fff;
+  display: block;
+  height: .5em;
+  z-index: 255; }
+
+/* line 25, ../../components/sass/small-screens/_base.scss */
+.spacer1em {
+  position: relative;
+  background-color: #fff;
+  display: block;
+  height: 1em;
+  z-index: 255; }
+
+/* line 40, ../../components/sass/small-screens/_base.scss */
+nav {
+  display: none; }
+
+@media all and (min-width: 46.8em) {
+  /* line 51, ../../components/sass/small-screens/_base.scss */
+  .open-menu-label {
+    display: none !important; }
+
+  /* line 55, ../../components/sass/small-screens/_base.scss */
+  .nav {
+    display: inline !important; } }
+/* line 6, ../../components/sass/small-screens/_layout.scss */
+.side-logo {
+  position: fixed;
+  top: 0;
+  height: 2em;
+  width: 100%;
+  z-index: 100;
+  background-color: white; }
+
+/* line 16, ../../components/sass/small-screens/_layout.scss */
+#menu-bar label {
+  position: fixed;
+  top: 2em;
+  height: 2em;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  border-bottom: 5px solid black; }
+
+/* line 26, ../../components/sass/small-screens/_layout.scss */
+.currentPage {
+  position: fixed;
+  right: 0;
+  top: 0;
+  font-size: 1.7em;
+  z-index: 200;
+  padding: 0.1em; }
+
+/* line 39, ../../components/sass/small-screens/_layout.scss */
+#content {
+  top: 1em;
+  position: relative; }
+
+/* line 47, ../../components/sass/small-screens/_layout.scss */
+.article {
+  position: relative;
+  margin: 10px; }
+
+/* line 52, ../../components/sass/small-screens/_layout.scss */
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 4em;
+  background-color: #000;
+  color: #fff;
+  z-index: 100; }
+/* line 63, ../../components/sass/small-screens/_layout.scss */
+nav ul {
+  position: relative;
+  top: 2em; }
+/* line 68, ../../components/sass/small-screens/_layout.scss */
+nav li {
+  font-size: 2em;
+  height: 3em;
+  width: 100%;
+  position: relative;
+  left: 1em; }
+/* line 74, ../../components/sass/small-screens/_layout.scss */
+nav li a {
+  color: white !important; }
+
+/* line 82, ../../components/sass/small-screens/_layout.scss */
+#footer {
+  top: 4em;
+  position: relative;
+  display: block; }
+
+@media all and (min-width: 46.8em) {
+  /* line 94, ../../components/sass/small-screens/_layout.scss */
+  .nav {
+    background-color: white;
+    color: black;
+    font-size: 3em; } }
+/* line 3, ../../components/sass/small-screens/_modules.scss */
+.side-logo {
+  font-size: 2em; }
+
+/* line 9, ../../components/sass/small-screens/_modules.scss */
+.article {
+  padding: 5px; }
+/* line 11, ../../components/sass/small-screens/_modules.scss */
+.article h2 {
+  font-size: 1.3em;
+  margin-top: 2.5em; }
+/* line 15, ../../components/sass/small-screens/_modules.scss */
+.article h3 {
+  font-size: 1em;
+  margin-top: 1.5em; }
+/* line 20, ../../components/sass/small-screens/_modules.scss */
+.article p {
+  margin-top: 0.5em; }
+/* line 24, ../../components/sass/small-screens/_modules.scss */
+.article .title {
+  font-size: 2em;
+  margin-bottom: 3em; }
+
+/* line 37, ../../components/sass/small-screens/_modules.scss */
+input#open-menu {
+  display: none; }
+
+/* line 41, ../../components/sass/small-screens/_modules.scss */
+input[type=checkbox]:checked ~ nav {
+  display: block; }
+
+@media only screen and (min-width: 760 px) {
+  /* line 47, ../../components/sass/small-screens/_modules.scss */
+  label.open-menu-label {
+    display: none; } }

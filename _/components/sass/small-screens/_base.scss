@@ -38,6 +38,21 @@ body {
 
 
 nav {
-	display: inline;
+	display: none;
 }
 
+// __________________________________________ MEDIUM SIZED SCREENS
+
+
+
+
+@media all and (min-width: $bp-med) {
+
+	.open-menu-label {
+		display: none !important;
+	}
+
+	.nav {
+		display: inline !important;
+	}
+}
