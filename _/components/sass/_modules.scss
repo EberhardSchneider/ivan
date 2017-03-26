@@ -1,7 +1,7 @@
 // ************** HEADER
 
 .side-logo {
-	font-size: 2em;
+	font-size: 2.8em;
 }
 
 //  *************** Content
@@ -11,6 +11,7 @@
 	h2 {
 		font-size: 1.3em;
 		margin-top: 2.5em;
+		margin-bottom: 1em;
 	}
 	h3 {
 		font-size: 1em;
@@ -32,19 +33,19 @@
 
 // SIDE-MENU
 
-
+// disable menu button
 
 input#open-menu {
 	display: none;
 }
 
-input[type=checkbox]:checked ~ nav {
-	display: block;
+
+label.open-menu-label {
+	display: none;
 }
 
-
-@media only screen and (min-width: 760 px) {
-	label.open-menu-label {
-		display: none;
+nav {
+	.active {
+		border-bottom: 2px solid black;
 	}
 }

@@ -1,1 +1,1 @@
-function hello(){console.log("hello ")}
+$(function(){$("#content").mCustomScrollbar({axis:"y",theme:"dark"})});
