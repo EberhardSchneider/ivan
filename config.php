@@ -6,7 +6,7 @@ define("DB_USERNAME","root");
 define("DB_PASSWORD","root");
 define("CLASS_PATH","classes");
 define("TEMPLATE_PATH","templates");
-define("ADMINE_USERNAME","ivan");
+define("ADMIN_USERNAME","ivan");
 define("ADMIN_PASSWORD","ivan");
 define("SITE_ROOT","localhost/ivan");
 

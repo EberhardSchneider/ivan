@@ -48,7 +48,7 @@ nav {
 
 
 .article {
-	
+	border-top: 2px solid #ddd;
 	margin: 10px;
 }
 
@@ -70,9 +70,15 @@ nav {
 }
 
 #footer {
-	top: 4em;
-	
+
 	display: block;
+	margin: 2em 0 2em;
+	padding-top: 1em;
+	padding-right: 3em;
+	position:  relative;
+	left: 1em;
+	border-top: 2px solid #ddd;
+	width: 80%;
 }
 
 

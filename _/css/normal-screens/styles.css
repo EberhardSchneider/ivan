@@ -42,18 +42,18 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
-/* line 3, ../../components/sass/small-screens/_base.scss */
+/* line 3, ../../components/sass/normal-screens/_base.scss */
 body {
   font-family: 'Monda', sans-serif; }
-/* line 6, ../../components/sass/small-screens/_base.scss */
+/* line 6, ../../components/sass/normal-screens/_base.scss */
 body a {
   text-decoration: none;
   color: black; }
-/* line 9, ../../components/sass/small-screens/_base.scss */
+/* line 9, ../../components/sass/normal-screens/_base.scss */
 body a:visited {
   color: black; }
 
-/* line 17, ../../components/sass/small-screens/_base.scss */
+/* line 17, ../../components/sass/normal-screens/_base.scss */
 .spacerhalfem {
   position: relative;
   background-color: #fff;
@@ -61,7 +61,7 @@ body a:visited {
   height: .5em;
   z-index: 255; }
 
-/* line 25, ../../components/sass/small-screens/_base.scss */
+/* line 25, ../../components/sass/normal-screens/_base.scss */
 .spacer1em {
   position: relative;
   background-color: #fff;
@@ -69,143 +69,103 @@ body a:visited {
   height: 1em;
   z-index: 255; }
 
-/* line 40, ../../components/sass/small-screens/_base.scss */
+/* line 40, ../../components/sass/normal-screens/_base.scss */
 nav {
-  display: none; }
+  display: inline; }
 
-@media all and (min-width: 46.8em) {
-  /* line 51, ../../components/sass/small-screens/_base.scss */
-  .open-menu-label {
-    display: none !important; }
-
-  /* line 55, ../../components/sass/small-screens/_base.scss */
-  .nav {
-    display: inline !important; } }
-/* line 6, ../../components/sass/small-screens/_layout.scss */
+/* line 6, ../../components/sass/normal-screens/_layout.scss */
 .side-logo {
   position: fixed;
-  top: 0;
-  height: 2em;
-  width: 100%;
+  top: 12%;
+  left: 7%;
+  width: 4em;
   z-index: 100;
   background-color: white; }
 
-/* line 16, ../../components/sass/small-screens/_layout.scss */
-#menu-bar label {
+/* line 15, ../../components/sass/normal-screens/_layout.scss */
+nav {
+  display: inline;
   position: fixed;
-  top: 2em;
-  height: 2em;
-  width: 100%;
-  background-color: white;
-  z-index: 100;
-  border-bottom: 5px solid black; }
+  top: 35%;
+  left: 7%;
+  width: 20%;
+  height: 60%;
+  color: black; }
 
-/* line 26, ../../components/sass/small-screens/_layout.scss */
+/* line 26, ../../components/sass/normal-screens/_layout.scss */
 .currentPage {
-  position: fixed;
-  right: 0;
-  top: 0;
-  font-size: 1.7em;
-  z-index: 200;
-  padding: 0.1em; }
+  display: none; }
 
-/* line 39, ../../components/sass/small-screens/_layout.scss */
+/* line 34, ../../components/sass/normal-screens/_layout.scss */
 #content {
-  top: 1em;
-  position: relative;
-  height: 115%; }
+  display: inline-block;
+  position: absolute;
+  left: 30%;
+  width: 60%;
+  top: 12%;
+  height: 75%;
+  overflow: hidden;
+  float: left; }
 
-/* line 48, ../../components/sass/small-screens/_layout.scss */
+/* line 50, ../../components/sass/normal-screens/_layout.scss */
 .article {
-  position: relative;
+  border-top: 2px solid #ddd;
   margin: 10px; }
 
-/* line 53, ../../components/sass/small-screens/_layout.scss */
-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 4em;
-  background-color: #000;
-  color: #fff;
-  z-index: 100; }
-/* line 64, ../../components/sass/small-screens/_layout.scss */
+/* line 58, ../../components/sass/normal-screens/_layout.scss */
 nav ul {
-  position: relative;
   top: 2em; }
-/* line 69, ../../components/sass/small-screens/_layout.scss */
+/* line 63, ../../components/sass/normal-screens/_layout.scss */
 nav li {
-  font-size: 2em;
+  font-size: 1.5em;
   height: 3em;
   width: 100%;
-  position: relative;
-  left: 1em; }
-/* line 75, ../../components/sass/small-screens/_layout.scss */
-nav li a {
-  color: white !important; }
+  position: relative; }
 
-/* line 83, ../../components/sass/small-screens/_layout.scss */
+/* line 72, ../../components/sass/normal-screens/_layout.scss */
 #footer {
   display: block;
   margin: 2em 0 2em;
+  padding-top: 1em;
   padding-right: 3em;
   position: relative;
   left: 1em;
   border-top: 2px solid #ddd;
   width: 80%; }
 
-/* line 95, ../../components/sass/small-screens/_layout.scss */
-.login-form {
-  position: absolute;
-  top: 8em;
-  width: 80%;
-  margin: 20px auto;
-  padding: 40px 20px;
-  overflow: auto;
-  background: #ccc;
-  border: 1px solid #666;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8); }
-
-/* line 115, ../../components/sass/small-screens/_layout.scss */
-.adminHeader {
-  position: relative;
-  display: block;
-  top: 5em; }
-
-/* line 3, ../../components/sass/small-screens/_modules.scss */
+/* line 3, ../../components/sass/normal-screens/_modules.scss */
 .side-logo {
-  font-size: 2em; }
+  font-size: 2.8em; }
 
-/* line 9, ../../components/sass/small-screens/_modules.scss */
+/* line 9, ../../components/sass/normal-screens/_modules.scss */
 .article {
-  padding: 5px;
-  border-top: 2px solid #ddd; }
-/* line 12, ../../components/sass/small-screens/_modules.scss */
+  margin-top: 2.5em;
+  padding: 5px; }
+/* line 12, ../../components/sass/normal-screens/_modules.scss */
 .article h2 {
+  margin-top: 2em;
   font-size: 1.3em;
-  margin-top: 2.5em; }
-/* line 16, ../../components/sass/small-screens/_modules.scss */
+  margin-bottom: 1em; }
+/* line 17, ../../components/sass/normal-screens/_modules.scss */
 .article h3 {
   font-size: 1em;
   margin-top: 1.5em; }
-/* line 21, ../../components/sass/small-screens/_modules.scss */
+/* line 22, ../../components/sass/normal-screens/_modules.scss */
 .article p {
   margin-top: 0.5em; }
-/* line 25, ../../components/sass/small-screens/_modules.scss */
+/* line 26, ../../components/sass/normal-screens/_modules.scss */
 .article .title {
   font-size: 2em;
   margin-bottom: 3em; }
 
-/* line 38, ../../components/sass/small-screens/_modules.scss */
+/* line 39, ../../components/sass/normal-screens/_modules.scss */
 input#open-menu {
   display: none; }
 
-/* line 42, ../../components/sass/small-screens/_modules.scss */
-input[type=checkbox]:checked ~ nav {
-  display: block; }
+/* line 44, ../../components/sass/normal-screens/_modules.scss */
+label.open-menu-label {
+  display: none; }
+
+/* line 49, ../../components/sass/normal-screens/_modules.scss */
+nav .active {
+  border-bottom: 2px solid black; }

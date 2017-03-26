@@ -39,6 +39,7 @@
 #content {
 	top: 1em;
 	position: relative;
+	height: 115%;
 }
 
 
@@ -80,24 +81,43 @@ nav {
 }
 
 #footer {
-	top: 4em;
+	display: block;
+	margin: 2em 0 2em;
+	padding-right: 3em;
+	position:  relative;
+	left: 1em;
+	border-top: 2px solid #ddd;
+	width: 80%;
+}
+
+// Admin Page
+
+.login-form {
+	position: absolute;
+	top: 8em;
+	width: 80%;
+
+	margin: 20px auto;
+    padding: 40px 20px;
+    overflow: auto;
+    background: #ccc;
+    border: 1px solid #666;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;  
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+
+}
+
+
+.adminHeader {
 	position: relative;
 	display: block;
+	top: 5em;
 }
 
-
-// __________________________________________medium sized screens
-
-
-@media all and (min-width: $bp-med) {
-
-	.nav {
-		background-color: white;
-		color: black;
-		font-size: 3em;
-	}
-
-}
 
 
 

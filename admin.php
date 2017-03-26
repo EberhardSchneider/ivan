@@ -5,7 +5,9 @@ session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
+
 if ( $action != "login" && $action != "logout" && !$username ) {
+
 	login();
 	exit;
 }
@@ -42,16 +44,17 @@ function login() {
 			$_SESSION['username'] = ADMIN_USERNAME;
 			header( "Location: admin.php");
 		} 
-		elseif (isset( $results['errorMessage'])) {
+		else {
 			// LOGIN failed: error message to user
 			$results['errorMessage'] = "Incorrect username or password";
 			require( TEMPLATE_PATH . "/admin/loginForm.php");
 		}
-		else {
+
+	}
+	else {
 			// User has not posted login form yet
 			require( TEMPLATE_PATH . "/admin/loginForm.php");
 		}
-	}
 }
 
 

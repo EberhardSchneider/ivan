@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 				tasks: ['uglify']
 			}, // scripts
 			sass: {
-				files: ['_/components/sass/*.scss'],
+				files: ['_/components/sass/**/*.scss'],
 				tasks: ['compass:dev']
 			}, // sass
 			html: {

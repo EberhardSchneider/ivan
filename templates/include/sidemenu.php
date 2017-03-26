@@ -1,6 +1,5 @@
 <div class="side-logo">
 	<span class="title"><a href=".">Ivan Bazak</a></span>
-
 </div>
 
 <div id="menu-bar">
