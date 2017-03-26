@@ -23,10 +23,21 @@
 	border-bottom: 5px solid black;
 }
 
+.currentPage {
+	position: fixed;
+	right: 0;
+	top: 0;
+	font-size: 1.7em;
+	z-index: 200;
+	padding: 0.1em;
+}
+
+
+
 // get content under menu bar
 
 #content {
-	top: 4em;
+	top: 1em;
 	position: relative;
 }
 
@@ -37,19 +48,16 @@
 	position: relative;
 	margin: 10px;
 	
-	background-color: red;
 
-	p {
-		padding-top: 1em;
-	}
+
 }
 
 nav {
-	position: absolute;
+	position: fixed;
 	left:0;
 	right:0;
 	bottom:0;
-	top: 10%;
+	top: 4em;
 
 	background-color: #000;
 	color: #fff;
@@ -68,12 +76,17 @@ nav {
 		left: 1em;
 		a {
 
-			color: white;
+			color: white !important;
 			
 		}
 	}
 }
 
+#footer {
+	top: 4em;
+	position: relative;
+	display: block;
+}
 
 
 

@@ -1,11 +1,12 @@
 <div class="side-logo">
-	<span class="title">Ivan Bazak</span>
+	<span class="title"><a href=".">Ivan Bazak</a></span>
 
 </div>
 
 <div id="menu-bar">
 	<label for="open-menu" class="open-menu-label">
 		<img src="icons/hamburger.svg" alt="Show Menu">
+		<div class="spacerhalfem"></div>
 	</label>
 	<input type="checkbox" id="open-menu">
 	<nav>

@@ -11,5 +11,9 @@
 	
 	<body>
 
+	<div class="currentPage"> <!-- position fixed/absolute -->
+		<?php echo htmlspecialchars( $results['pageTitle']) ?>
+	</div>
+
 	<div id="container">
 		

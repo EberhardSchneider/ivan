@@ -5,11 +5,35 @@ body {
 	font-family: 'Monda', sans-serif;
 	a {
 		text-decoration: none;
+		color: black;
+		&:visited {
+			color: black;
+		}
 	}
 
 }
 
-// small screens
+
+.spacerhalfem {
+	position: relative;
+	background-color: #fff;
+	display: block;
+	height: .5em;
+	z-index: 255;
+}
+
+.spacer1em {
+	position: relative;
+	background-color: #fff;
+	display: block;
+	height: 1em;
+	z-index: 255;
+}
+
+
+// __________________________________________ SMALL SCREENS
+
+// Navigation
 
 
 @media screen, handheld {
@@ -17,7 +41,6 @@ body {
 		display: none;
 	}
 }
-
 
 
 
