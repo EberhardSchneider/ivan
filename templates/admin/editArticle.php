@@ -21,7 +21,7 @@
 
 				<li>
 					<label for="content">Eintrag</label>
-					<textarea name="content" id="content"  placeholder="Inhalt des Eintrags" required maxlength="100000"><?php echo utf8_encode( $results['article']->content) ?></textarea>
+					<textarea name="content" id="content"  placeholder="Inhalt des Eintrags" required maxlength="100000"><?php echo  $results['article']->content ?></textarea>
 				</li>
 
 				<li>
@@ -30,6 +30,15 @@
 				</li>
 
 			</ul>
+
+			
+<?php 	$index = 0;
+		foreach($pages as $page) { 
+			$index++;  ?>
+				<input type="radio" name="pageId" id="<?php echo $index?>" value="<?php echo $index ?>" />
+				<label for="<?php echo $index?>"><?php echo $page['title'] ?></label>	
+<?php } ?>							
+			
 
 			<div class="buttons">
 				<input type="submit" name="saveChanges" value="Änderungen speichern" />

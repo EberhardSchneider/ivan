@@ -34,7 +34,7 @@
 				<?php echo $article->title?>
 			</td>
 			<td>
-				<?php echo $results['pageTitles'][$article->page_id-1]['title']; ?>
+				<?php echo $pages[$article->pageId-1]['title']; ?>
 			</td>
 		</tr>
 <?php

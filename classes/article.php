@@ -16,7 +16,7 @@ class Article {
 	/**
 	*	@var int ID of page on which article will be presented
 	*/
-	public $page_id = null;
+	public $pageId = null;
 
 	/**
 	*	@var int publishing date of article
@@ -51,7 +51,7 @@ class Article {
 
 public function __construct( $data = array() ) {
 	if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
-	if ( isset( $data['pageId'])) $this->page_id = (int) $data['pageId'];
+	if ( isset( $data['pageId'])) $this->pageId = (int) $data['pageId'];
 	if ( isset( $data['publicationDate'] ) ) $this->publicationDate = (int) $data['publicationDate'];
 	if ( isset( $data['title'] ) ) $this->title = $data['title'];
 	if ( isset( $data['summary'] ) ) $this->summary = $data['summary'];
@@ -65,6 +65,7 @@ public function __construct( $data = array() ) {
 public function storeFormValues( $params ) {
 	// Store all params
 	$this->__construct( $params );
+
 
 	// Parse and store publication Date
 
@@ -163,16 +164,21 @@ public function getArticlesByPage( $page = 1, $numRows=100000, $order="publicati
 public function insert() {
 	// Does the Article object already have an ID?
 	if (!is_null( $this->id )) trigger_error("Article::insert()Attempt to insert an Article object that already has its ID property set (to $this->id).", E_USER_ERROR );
-
+	
+	trigger_error("j");
 	// Insert the article
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	$sql = "INSERT INTO articles (publicationDate, title, summary, content) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :summary, :content";
+	$sql = "INSERT INTO articles (publicationDate, title,  content, pageId) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :content, :pageId);";
 	$st = $conn->prepare( $sql );
 	$st->bindValue(":publicationDate", $this->publicationDate, PDO::PARAM_INT);
 	$st->bindValue(":title", $this->title, PDO::PARAM_STR);
-	$st->bindValue(":summary", $this->summary, PDO::PARAM_STR);
+
 	$st->bindValue(":content", $this->content , PDO::PARAM_STR);
+	$st->bindValue(":pageId", $this->pageId, PDO::PARAM_INT);
+
 	$st->execute();
+	
+
 	$this->id = $conn->lastInsertId();
 	$conn = null;
 

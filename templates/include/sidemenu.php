@@ -22,7 +22,7 @@
 ?>
 		<li>
 			<a href="index.php?action=showPage&page_id=<?php echo $row['id']; ?> ">
-				<span class="menu-element <?php echo ($index == $page) ? "active" : "" ?>" > <?php echo $row['linkname']; ?></span>
+				<div class="menu-element <?php echo ($index == $page) ? "active" : "" ?>" > <?php echo $row['linkname']; ?></span>
 			</a>
 		</li>
 

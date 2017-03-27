@@ -17,7 +17,7 @@
 
 		<li>
 			<label for="password">Passwort </label>
-			<input type="password" mane="password" id="password" palceholder="Passwort" required maxlength="20" />
+			<input type="password" name="password" id="password" placeholder="Passwort" required maxlength="20" />
 		</li>
 	</ul>
 

@@ -17,10 +17,10 @@ if ( $action != "login" && $action != "logout" && !$username ) {
 	$st = $conn->prepare( $sql );
 	$st->execute();
 
-	$results = array();
-	$results['pageTitles'] = array();
+	$pages = array();
+	
 	while ($row = $st->fetch()) {
-		$results['pageTitles'][] = $row;
+		$pages[] = $row;
 	};
 	$conn = null;
 
@@ -76,24 +76,24 @@ function login() {
 
 
 function logout() {
-	echo "logout";
 	unset( $_SESSION['username']);
 	header( "Location: admin.php" );
 }
 
 function newArticle() {
-
+	
+	global $pages;
 	$results = array();
+
 	$results['pageTitle'] = "Neuer Eintrag";
 	$results['formAction'] = "newArticle";
 
 	if ( isset( $_POST['saveChanges']) ) {
-
 		// User has posted article edit form: save new article
 		$article = new Article();
 		$article->storeFormValues( $_POST );
 		$article->insert();
-		header( "Location: admin.php&status=changesSaved");
+		header( "Location: admin.php?status=changesSaved");
 
 	} 
 	elseif ( isset( $_POST['cancel'])) {
@@ -113,6 +113,9 @@ function newArticle() {
 
 
 function editArticle() {
+
+	global $pages;
+
 	$results = array();
 	$results['pageTitle'] = "Eintrag bearbeiten";
 	$results['formAction'] = "editArticle";
@@ -148,7 +151,7 @@ function editArticle() {
 
 function deleteArticle() {
 
-	if ( !$article = Article::getById( (int)$_GET['articleId'] ) ) {
+	if ( !$article = Article::getArticleById( (int)$_GET['articleId'] ) ) {
 		header( "Location: admin.php?error=articleNotFound" );
 		return;
 	}
@@ -159,7 +162,7 @@ function deleteArticle() {
 }
 
 function listArticles() {
-	global $results;
+	global $pages;
 	$data = Article::getList();
 	$results['articles'] = $data['results'];
 	$results['totalRows'] = $data['totalRows'];
