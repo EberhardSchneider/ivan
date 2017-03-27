@@ -6,13 +6,22 @@
 	<div id="articles">
 
 <?php
-	foreach ($results['articles'] as $article) {  ?>
+	foreach ($results['articles'] as $article) {  
+
+
+
+		?>
 
 	<div class="article">
 		<h2>
 			<span class="title"><?php echo htmlspecialchars($article->title); ?></span>
 		</h2>
-			<!-- TODO: show Images (in Template???) -->
+<?php  $images = Image::getImagesByArticleId( $article->id );
+		foreach ($images as $image) {  ?>		
+			<div class="article-image">
+				<img src="<?php echo IMG_PATH . "/" . $image->source ?>" alt="<?php echo $image->subtitle ?>" />
+			</div>
+<?php } ?>
 			<div class="content"><?php echo $article->content ?></div>
 		
 	</div>

@@ -51,7 +51,23 @@ public function getImageById( $id ) {
 	if ( $row ) return ( new Image( $row ) );
 }
 
-// TODO: getImagesByArticle??
+
+// returns an array with all images in the article $id
+public function getImagesByArticleId( $id = 1 ) {
+	$images = array();
+	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
+	// TODO: put in one query!
+	$sql = "SELECT image_id FROM articles JOIN articleimages ON articles.id=articleimages.article_id WHERE article_id=:article_id";
+	$st = $conn->prepare( $sql );
+	$st->bindValue(":article_id", $id, PDO::PARAM_INT);
+	$st->execute();
+
+	while ( $row = $st->fetch() ) {
+		$images[] = Image::getImageById( $row['image_id']);
+	}
+
+	return $images;
+}
 
 public function insert() {
 

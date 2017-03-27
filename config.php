@@ -10,6 +10,8 @@ define("ADMIN_USERNAME","ivan");
 define("ADMIN_PASSWORD","ivan");
 define("SITE_ROOT","localhost/ivan");
 
+define("IMG_PATH","images");
+
 // here the required classes
 
 require( CLASS_PATH . "/article.php");

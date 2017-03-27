@@ -104,7 +104,11 @@ nav {
   height: 60%;
   color: black; }
 
-/* line 26, ../../components/sass/normal-screens/_layout.scss */
+/* line 25, ../../components/sass/normal-screens/_layout.scss */
+.menu-element {
+  width: 70%; }
+
+/* line 30, ../../components/sass/normal-screens/_layout.scss */
 .currentPage {
   position: absolute;
   left: 30%;
@@ -112,7 +116,7 @@ nav {
   font-size: 1.3em;
   border-bottom: 2px solid black; }
 
-/* line 38, ../../components/sass/normal-screens/_layout.scss */
+/* line 42, ../../components/sass/normal-screens/_layout.scss */
 #wrapper {
   display: inline-block;
   position: absolute;
@@ -123,22 +127,22 @@ nav {
   overflow: hidden;
   float: left; }
 
-/* line 55, ../../components/sass/normal-screens/_layout.scss */
+/* line 59, ../../components/sass/normal-screens/_layout.scss */
 .article {
   border-top: 2px solid #ddd;
   margin: 10px; }
 
-/* line 63, ../../components/sass/normal-screens/_layout.scss */
+/* line 67, ../../components/sass/normal-screens/_layout.scss */
 nav ul {
   top: 2em; }
-/* line 68, ../../components/sass/normal-screens/_layout.scss */
+/* line 72, ../../components/sass/normal-screens/_layout.scss */
 nav li {
   font-size: 1.5em;
   height: 3em;
   width: 100%;
   position: relative; }
 
-/* line 77, ../../components/sass/normal-screens/_layout.scss */
+/* line 81, ../../components/sass/normal-screens/_layout.scss */
 #footer {
   display: block;
   margin: 2em 0 2em;
@@ -149,7 +153,7 @@ nav li {
   border-top: 2px solid #ddd;
   width: 80%; }
 
-/* line 92, ../../components/sass/normal-screens/_layout.scss */
+/* line 96, ../../components/sass/normal-screens/_layout.scss */
 .login-form {
   position: absolute;
   top: 23%;
@@ -163,12 +167,12 @@ nav li {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px; }
-/* line 107, ../../components/sass/normal-screens/_layout.scss */
+/* line 111, ../../components/sass/normal-screens/_layout.scss */
 .login-form label {
   display: inline-block;
   width: 8em; }
 
-/* line 116, ../../components/sass/normal-screens/_layout.scss */
+/* line 120, ../../components/sass/normal-screens/_layout.scss */
 .adminHeader {
   position: absolute;
   left: 7%;
@@ -176,24 +180,24 @@ nav li {
   width: 15%;
   font-size: 1.2em; }
 
-/* line 126, ../../components/sass/normal-screens/_layout.scss */
+/* line 130, ../../components/sass/normal-screens/_layout.scss */
 .article-table {
   margin-top: 6em;
   margin-bottom: 6em; }
-/* line 130, ../../components/sass/normal-screens/_layout.scss */
+/* line 134, ../../components/sass/normal-screens/_layout.scss */
 .article-table th {
   font-weight: bold;
   width: 15%;
   height: 2em;
   border-bottom: 2px solid black; }
-/* line 137, ../../components/sass/normal-screens/_layout.scss */
+/* line 141, ../../components/sass/normal-screens/_layout.scss */
 .article-table tr {
   height: 1.3em; }
 
-/* line 143, ../../components/sass/normal-screens/_layout.scss */
+/* line 147, ../../components/sass/normal-screens/_layout.scss */
 #wrapper label {
   width: 15em; }
-/* line 147, ../../components/sass/normal-screens/_layout.scss */
+/* line 151, ../../components/sass/normal-screens/_layout.scss */
 #wrapper textarea {
   width: 20em;
   height: 30em; }
