@@ -1,1 +1,1 @@
-$(function(){$("#content").mCustomScrollbar({axis:"y",theme:"dark"})});
+$(function(){$("#wrapper").mCustomScrollbar({axis:"y",theme:"dark"})});

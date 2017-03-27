@@ -52,8 +52,20 @@ body a {
 /* line 9, ../../components/sass/normal-screens/_base.scss */
 body a:visited {
   color: black; }
+/* line 13, ../../components/sass/normal-screens/_base.scss */
+body b {
+  font-weight: bold; }
+/* line 16, ../../components/sass/normal-screens/_base.scss */
+body h1 {
+  font-size: 1.9em; }
+/* line 19, ../../components/sass/normal-screens/_base.scss */
+body h2 {
+  font-size: 1.6em; }
+/* line 22, ../../components/sass/normal-screens/_base.scss */
+body h3 {
+  font-size: 1.3em; }
 
-/* line 17, ../../components/sass/normal-screens/_base.scss */
+/* line 28, ../../components/sass/normal-screens/_base.scss */
 .spacerhalfem {
   position: relative;
   background-color: #fff;
@@ -61,7 +73,7 @@ body a:visited {
   height: .5em;
   z-index: 255; }
 
-/* line 25, ../../components/sass/normal-screens/_base.scss */
+/* line 36, ../../components/sass/normal-screens/_base.scss */
 .spacer1em {
   position: relative;
   background-color: #fff;
@@ -69,7 +81,7 @@ body a:visited {
   height: 1em;
   z-index: 255; }
 
-/* line 40, ../../components/sass/normal-screens/_base.scss */
+/* line 51, ../../components/sass/normal-screens/_base.scss */
 nav {
   display: inline; }
 
@@ -94,10 +106,14 @@ nav {
 
 /* line 26, ../../components/sass/normal-screens/_layout.scss */
 .currentPage {
-  display: none; }
+  position: absolute;
+  left: 30%;
+  top: 8%;
+  font-size: 1.3em;
+  border-bottom: 2px solid black; }
 
-/* line 34, ../../components/sass/normal-screens/_layout.scss */
-#content {
+/* line 38, ../../components/sass/normal-screens/_layout.scss */
+#wrapper {
   display: inline-block;
   position: absolute;
   left: 30%;
@@ -107,22 +123,22 @@ nav {
   overflow: hidden;
   float: left; }
 
-/* line 50, ../../components/sass/normal-screens/_layout.scss */
+/* line 55, ../../components/sass/normal-screens/_layout.scss */
 .article {
   border-top: 2px solid #ddd;
   margin: 10px; }
 
-/* line 58, ../../components/sass/normal-screens/_layout.scss */
+/* line 63, ../../components/sass/normal-screens/_layout.scss */
 nav ul {
   top: 2em; }
-/* line 63, ../../components/sass/normal-screens/_layout.scss */
+/* line 68, ../../components/sass/normal-screens/_layout.scss */
 nav li {
   font-size: 1.5em;
   height: 3em;
   width: 100%;
   position: relative; }
 
-/* line 72, ../../components/sass/normal-screens/_layout.scss */
+/* line 77, ../../components/sass/normal-screens/_layout.scss */
 #footer {
   display: block;
   margin: 2em 0 2em;
@@ -132,6 +148,55 @@ nav li {
   left: 1em;
   border-top: 2px solid #ddd;
   width: 80%; }
+
+/* line 92, ../../components/sass/normal-screens/_layout.scss */
+.login-form {
+  position: absolute;
+  top: 23%;
+  left: 30%;
+  width: 40%;
+  margin: 20px auto;
+  padding: 40px 20px;
+  overflow: auto;
+  background: #ccc;
+  border: 1px solid #666;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+/* line 107, ../../components/sass/normal-screens/_layout.scss */
+.login-form label {
+  display: inline-block;
+  width: 8em; }
+
+/* line 116, ../../components/sass/normal-screens/_layout.scss */
+.adminHeader {
+  position: absolute;
+  left: 7%;
+  top: 33%;
+  width: 15%;
+  font-size: 1.2em; }
+
+/* line 126, ../../components/sass/normal-screens/_layout.scss */
+.article-table {
+  margin-top: 6em;
+  margin-bottom: 6em; }
+/* line 130, ../../components/sass/normal-screens/_layout.scss */
+.article-table th {
+  font-weight: bold;
+  width: 15%;
+  height: 2em;
+  border-bottom: 2px solid black; }
+/* line 137, ../../components/sass/normal-screens/_layout.scss */
+.article-table tr {
+  height: 1.3em; }
+
+/* line 143, ../../components/sass/normal-screens/_layout.scss */
+#wrapper label {
+  width: 15em; }
+/* line 147, ../../components/sass/normal-screens/_layout.scss */
+#wrapper textarea {
+  width: 20em;
+  height: 30em; }
 
 /* line 3, ../../components/sass/normal-screens/_modules.scss */
 .side-logo {

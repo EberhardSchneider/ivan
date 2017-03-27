@@ -14,6 +14,10 @@
 	
 	<body>
 
+	<div class="side-logo">
+		<span class="title"><a href=".">Ivan Bazak</a></span>
+	</div>
+
 	<div class="currentPage"> <!-- position fixed/absolute -->
 		<?php echo htmlspecialchars( $results['pageTitle']) ?>
 	</div>

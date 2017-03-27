@@ -2,7 +2,7 @@
 
 <?php include "templates/include/sidemenu.php"; ?>
 
-<div id="content">
+<div id="wrapper">
 	<div id="articles">
 
 <?php
@@ -13,7 +13,7 @@
 			<span class="title"><?php echo htmlspecialchars($article->title); ?></span>
 		</h2>
 			<!-- TODO: show Images (in Template???) -->
-			<div class="content"><?php echo utf8_encode( $article->content) ?></div>
+			<div class="content"><?php echo $article->content ?></div>
 		
 	</div>
 <?php

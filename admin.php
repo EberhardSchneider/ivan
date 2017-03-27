@@ -5,12 +5,27 @@ session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
-
 if ( $action != "login" && $action != "logout" && !$username ) {
-
 	login();
 	exit;
 }
+// now to be prepared store page names in $results
+
+// get Page title from DB
+	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+	$sql = "SELECT * FROM pages ORDER BY id";
+	$st = $conn->prepare( $sql );
+	$st->execute();
+
+	$results = array();
+	$results['pageTitles'] = array();
+	while ($row = $st->fetch()) {
+		$results['pageTitles'][] = $row;
+	};
+	$conn = null;
+
+
+
 
 switch( $action ) {
 	case 'login':
@@ -37,6 +52,7 @@ function login() {
 	$results = array();
 	$results['pageTitle'] = "Admin Login";
 
+
 	if ( isset( $_POST['login'] ) ) {
 		// User has posted login form, attempt to log the user in
 		if ($_POST['username'] == ADMIN_USERNAME && $_POST['password'] = ADMIN_PASSWORD) {
@@ -60,6 +76,7 @@ function login() {
 
 
 function logout() {
+	echo "logout";
 	unset( $_SESSION['username']);
 	header( "Location: admin.php" );
 }
@@ -103,7 +120,7 @@ function editArticle() {
 		if ( isset( $_POST['saveChanges']) ) {
 
 				// User has posted article edit form: save new article
-			if ( !$article = Article::getById( (int)$_POST['articleId'] ) ) {
+			if ( !$article = Article::getArticleById( (int)$_POST['articleId'] ) ) {
 				header( "Location: admin.php?error=articleNotFound");
 				return;
 			}
@@ -111,7 +128,7 @@ function editArticle() {
 
 			$article->storeFormValues( $_POST );
 			$article->update();
-			header( "Location: admin.php&status=changesSaved");
+			header( "Location: admin.php?status=changesSaved");
 		}
 		elseif ( isset( $_POST['cancel'] ) ) {
 
@@ -122,7 +139,7 @@ function editArticle() {
 		else {
 
 			// User has not postet the article edit form yet: display the form
-			$results['article'] = Article::getById( (int)$_GET['articleId'] );
+			$results['article'] = Article::getArticleById( (int)$_GET['articleId'] );
 			require( TEMPLATE_PATH . "/admin/editArticle.php" );
 		}
 
@@ -142,7 +159,7 @@ function deleteArticle() {
 }
 
 function listArticles() {
-	$results = array();
+	global $results;
 	$data = Article::getList();
 	$results['articles'] = $data['results'];
 	$results['totalRows'] = $data['totalRows'];

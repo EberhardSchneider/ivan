@@ -55,7 +55,7 @@ public function __construct( $data = array() ) {
 	if ( isset( $data['publicationDate'] ) ) $this->publicationDate = (int) $data['publicationDate'];
 	if ( isset( $data['title'] ) ) $this->title = $data['title'];
 	if ( isset( $data['summary'] ) ) $this->summary = $data['summary'];
-	if ( isset( $data['content'] ) ) $this->content = $data['content'];
+	if ( isset( $data['content'] ) ) $this->content =  $data['content'];
 }
 
 /**
@@ -171,7 +171,7 @@ public function insert() {
 	$st->bindValue(":publicationDate", $this->publicationDate, PDO::PARAM_INT);
 	$st->bindValue(":title", $this->title, PDO::PARAM_STR);
 	$st->bindValue(":summary", $this->summary, PDO::PARAM_STR);
-	$st->bindValue(":content", $this->content, PDO::PARAM_STR);
+	$st->bindValue(":content", $this->content , PDO::PARAM_STR);
 	$st->execute();
 	$this->id = $conn->lastInsertId();
 	$conn = null;

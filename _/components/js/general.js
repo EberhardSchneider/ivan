@@ -1,5 +1,5 @@
 $(function() {
-	$('#content').mCustomScrollbar(
+	$('#wrapper').mCustomScrollbar(
 		{
 			axis: 'y',
 			theme: 'dark'
