@@ -1,13 +1,13 @@
 // ************** HEADER
 
 .side-logo {
-	font-size: 2em;
+	font-size: 1.3em;
 }
 
 //  *************** Content
 
 .article {
-	padding: 5px;
+	padding: 0.4em;
 	border-top: 2px solid #ddd;
 	h2 {
 		font-size: 1.3em;
@@ -25,6 +25,13 @@
 	.title {
 		font-size: 2em;
 		margin-bottom: 3em;
+	}
+
+	.article-image {
+		width: 60%;
+		position: relative;
+		display: inline-block;
+		margin: .5em auto;
 	}
 }
 

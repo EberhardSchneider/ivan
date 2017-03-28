@@ -31,9 +31,9 @@ class Article {
 
 
 /**
-	*	@var string Short Summary of Article
+	*	@var string Short headline of Article
 	*/
-	public $summary = null;
+	public $headline = null;
 
 	/**
 	*	@var string HTML content of article
@@ -54,7 +54,7 @@ public function __construct( $data = array() ) {
 	if ( isset( $data['pageId'])) $this->pageId = (int) $data['pageId'];
 	if ( isset( $data['publicationDate'] ) ) $this->publicationDate = (int) $data['publicationDate'];
 	if ( isset( $data['title'] ) ) $this->title = $data['title'];
-	if ( isset( $data['summary'] ) ) $this->summary = $data['summary'];
+	if ( isset( $data['headline'] ) ) $this->headline = $data['headline'];
 	if ( isset( $data['content'] ) ) $this->content =  $data['content'];
 }
 
@@ -168,11 +168,11 @@ public function insert() {
 	trigger_error("j");
 	// Insert the article
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	$sql = "INSERT INTO articles (publicationDate, title,  content, pageId) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :content, :pageId);";
+	$sql = "INSERT INTO articles (publicationDate, title,  headline, content, pageId) VALUES ( FROM_UNIXTIME(:publicationDate), :headline, :title, :content, :pageId);";
 	$st = $conn->prepare( $sql );
 	$st->bindValue(":publicationDate", $this->publicationDate, PDO::PARAM_INT);
 	$st->bindValue(":title", $this->title, PDO::PARAM_STR);
-
+	$st->bindValue(":headline", $this->headline, PDO::PARAM_STR);
 	$st->bindValue(":content", $this->content , PDO::PARAM_STR);
 	$st->bindValue(":pageId", $this->pageId, PDO::PARAM_INT);
 
@@ -195,12 +195,13 @@ public function update() {
 
 		// Update the Article
   $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-  $sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, summary=:summary, content=:content WHERE id = :id";
+  $sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, headline=:headline, pageId=:pageId, content=:content WHERE id = :id";
   $st = $conn->prepare ( $sql );
   $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
   $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
-  $st->bindValue( ":summary", $this->summary, PDO::PARAM_STR );
+  $st->bindValue( ":headline", $this->headline, PDO::PARAM_STR );
   $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
+  $st->bindValue( ":pageId", $this->pageId, PDO::PARAM_INT );
   $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
   $st->execute();
   $conn = null;

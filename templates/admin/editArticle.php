@@ -20,6 +20,11 @@
 				</li>
 
 				<li>
+					<label for="headline">Headline</label>
+					<input type="text" name="headline" id="headline" placeholder="Headline" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->headline )?>" />
+				</li>
+
+				<li>
 					<label for="content">Eintrag</label>
 					<textarea name="content" id="content"  placeholder="Inhalt des Eintrags" required maxlength="100000"><?php echo  $results['article']->content ?></textarea>
 				</li>

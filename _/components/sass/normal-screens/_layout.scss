@@ -5,7 +5,7 @@
 
 .side-logo {
 	position: fixed;
-	top: 12%;
+	top: 17%;
 	left: 7%;
 	width: 4em;
 	z-index: 100;
@@ -23,7 +23,7 @@ nav {
 }
 
 .menu-element {
-	width: 70%;
+	display: inline-block;
 }
 
 
@@ -48,6 +48,7 @@ nav {
 	height: 75%;
 	overflow: hidden;
 	float:left;
+	max-width: 40em;
 }
 
 
@@ -59,6 +60,18 @@ nav {
 .article {
 	border-top: 2px solid #ddd;
 	margin: 10px;
+	max-width: 32em;
+
+	.article-image {
+		width: 60%;
+		position: relative;
+		display: inline-block;
+		margin: .5em auto;
+		float:right;
+		img {
+			float: right;
+		}
+	}
 }
 
 nav {
@@ -70,10 +83,14 @@ nav {
 	}
 
 	li {
-		font-size: 1.5em;
-		height: 3em;
+		font-size: 1.2em;
+		height: 2em;
 		width: 100%;
 		position: relative;
+
+		a:hover {
+			color: #777;
+		}
 		
 	}
 }
@@ -88,6 +105,8 @@ nav {
 	left: 1em;
 	border-top: 2px solid #ddd;
 	width: 80%;
+
+	font-size: 0.7em;
 }
 
 

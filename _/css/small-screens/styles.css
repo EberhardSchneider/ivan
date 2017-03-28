@@ -44,16 +44,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 3, ../../components/sass/small-screens/_base.scss */
 body {
-  font-family: 'Monda', sans-serif; }
-/* line 6, ../../components/sass/small-screens/_base.scss */
+  font-family: 'Monda', sans-serif;
+  font-size: 16px; }
+/* line 7, ../../components/sass/small-screens/_base.scss */
 body a {
   text-decoration: none;
   color: black; }
-/* line 9, ../../components/sass/small-screens/_base.scss */
+/* line 10, ../../components/sass/small-screens/_base.scss */
 body a:visited {
   color: black; }
 
-/* line 17, ../../components/sass/small-screens/_base.scss */
+/* line 18, ../../components/sass/small-screens/_base.scss */
 .spacerhalfem {
   position: relative;
   background-color: #fff;
@@ -61,7 +62,7 @@ body a:visited {
   height: .5em;
   z-index: 255; }
 
-/* line 25, ../../components/sass/small-screens/_base.scss */
+/* line 26, ../../components/sass/small-screens/_base.scss */
 .spacer1em {
   position: relative;
   background-color: #fff;
@@ -69,58 +70,68 @@ body a:visited {
   height: 1em;
   z-index: 255; }
 
-/* line 40, ../../components/sass/small-screens/_base.scss */
+/* line 41, ../../components/sass/small-screens/_base.scss */
 nav {
   display: none; }
 
 @media all and (min-width: 46.8em) {
-  /* line 51, ../../components/sass/small-screens/_base.scss */
+  /* line 52, ../../components/sass/small-screens/_base.scss */
   .open-menu-label {
     display: none !important; }
 
-  /* line 55, ../../components/sass/small-screens/_base.scss */
+  /* line 56, ../../components/sass/small-screens/_base.scss */
   .nav {
     display: inline !important; } }
 /* line 6, ../../components/sass/small-screens/_layout.scss */
 .side-logo {
   position: fixed;
   top: 0;
+  left: 0;
   height: 2em;
   width: 100%;
   z-index: 100;
   background-color: white; }
 
-/* line 16, ../../components/sass/small-screens/_layout.scss */
+/* line 18, ../../components/sass/small-screens/_layout.scss */
 #menu-bar label {
   position: fixed;
-  top: 2em;
-  height: 2em;
+  top: 1.5em;
+  left: 0.1em;
   width: 100%;
   background-color: white;
   z-index: 100;
-  border-bottom: 5px solid black; }
+  border-bottom: 3px solid black; }
+/* line 29, ../../components/sass/small-screens/_layout.scss */
+#menu-bar label img {
+  height: 2.6em;
+  width: 2.6em; }
 
-/* line 26, ../../components/sass/small-screens/_layout.scss */
+/* line 35, ../../components/sass/small-screens/_layout.scss */
 .currentPage {
   position: fixed;
-  right: 0;
-  top: 0;
-  font-size: 1.7em;
+  right: 0.1em;
+  top: 0.1em;
+  font-size: 1.3em;
   z-index: 200;
   padding: 0.1em; }
 
-/* line 39, ../../components/sass/small-screens/_layout.scss */
-#content {
+/* line 48, ../../components/sass/small-screens/_layout.scss */
+#wrapper {
   top: 1em;
   position: relative;
   height: 115%; }
 
-/* line 48, ../../components/sass/small-screens/_layout.scss */
+/* line 57, ../../components/sass/small-screens/_layout.scss */
 .article {
+  position: relative; }
+/* line 59, ../../components/sass/small-screens/_layout.scss */
+.article .article-image {
+  width: 60%;
   position: relative;
-  margin: 10px; }
+  display: inline-block;
+  margin: .5em auto; }
 
-/* line 53, ../../components/sass/small-screens/_layout.scss */
+/* line 67, ../../components/sass/small-screens/_layout.scss */
 nav {
   position: fixed;
   left: 0;
@@ -130,22 +141,22 @@ nav {
   background-color: #000;
   color: #fff;
   z-index: 100; }
-/* line 64, ../../components/sass/small-screens/_layout.scss */
+/* line 78, ../../components/sass/small-screens/_layout.scss */
 nav ul {
   position: relative;
-  top: 2em; }
-/* line 69, ../../components/sass/small-screens/_layout.scss */
+  top: 15%; }
+/* line 83, ../../components/sass/small-screens/_layout.scss */
 nav li {
-  font-size: 2em;
-  height: 3em;
+  font-size: 1.7em;
+  height: 2.5em;
   width: 100%;
   position: relative;
   left: 1em; }
-/* line 75, ../../components/sass/small-screens/_layout.scss */
+/* line 89, ../../components/sass/small-screens/_layout.scss */
 nav li a {
   color: white !important; }
 
-/* line 83, ../../components/sass/small-screens/_layout.scss */
+/* line 97, ../../components/sass/small-screens/_layout.scss */
 #footer {
   display: block;
   margin: 2em 0 2em;
@@ -155,7 +166,7 @@ nav li a {
   border-top: 2px solid #ddd;
   width: 80%; }
 
-/* line 95, ../../components/sass/small-screens/_layout.scss */
+/* line 109, ../../components/sass/small-screens/_layout.scss */
 .login-form {
   position: absolute;
   top: 8em;
@@ -172,7 +183,7 @@ nav li a {
   -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8); }
 
-/* line 115, ../../components/sass/small-screens/_layout.scss */
+/* line 129, ../../components/sass/small-screens/_layout.scss */
 .adminHeader {
   position: relative;
   display: block;
@@ -180,11 +191,11 @@ nav li a {
 
 /* line 3, ../../components/sass/small-screens/_modules.scss */
 .side-logo {
-  font-size: 2em; }
+  font-size: 1.3em; }
 
 /* line 9, ../../components/sass/small-screens/_modules.scss */
 .article {
-  padding: 5px;
+  padding: 0.4em;
   border-top: 2px solid #ddd; }
 /* line 12, ../../components/sass/small-screens/_modules.scss */
 .article h2 {
@@ -201,11 +212,17 @@ nav li a {
 .article .title {
   font-size: 2em;
   margin-bottom: 3em; }
+/* line 30, ../../components/sass/small-screens/_modules.scss */
+.article .article-image {
+  width: 60%;
+  position: relative;
+  display: inline-block;
+  margin: .5em auto; }
 
-/* line 38, ../../components/sass/small-screens/_modules.scss */
+/* line 45, ../../components/sass/small-screens/_modules.scss */
 input#open-menu {
   display: none; }
 
-/* line 42, ../../components/sass/small-screens/_modules.scss */
+/* line 49, ../../components/sass/small-screens/_modules.scss */
 input[type=checkbox]:checked ~ nav {
   display: block; }

@@ -1,9 +1,9 @@
 <?php
 ini_set("display_errors", true);
 date_default_timezone_set("Europe/Berlin");
-define("DB_DSN","mysql:host=localhost;dbname=cms;charset=utf8");
-define("DB_USERNAME","root");
-define("DB_PASSWORD","root");
+define("DB_DSN","mysql:host=rdbms.strato.de;dbname=DB2924883;charset=utf8");
+define("DB_USERNAME","U2924883");
+define("DB_PASSWORD","kolo222kolo");
 define("CLASS_PATH","classes");
 define("TEMPLATE_PATH","templates");
 define("ADMIN_USERNAME","root");

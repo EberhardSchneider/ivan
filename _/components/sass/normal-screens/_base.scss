@@ -2,7 +2,8 @@
 
 body { 
 
-	font-family: 'Monda', sans-serif;
+	font-family: Verdana, sans-serif;
+	font-size: 16px;
 	a {
 		text-decoration: none;
 		color: black;
@@ -41,14 +42,4 @@ body {
 	z-index: 255;
 }
 
-
-// __________________________________________ SMALL SCREENS
-
-// Navigation
-
-
-
-nav {
-	display: inline;
-}
 

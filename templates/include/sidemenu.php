@@ -3,7 +3,7 @@
 <div id="menu-bar">
 	<label for="open-menu" class="open-menu-label">
 		<img src="icons/hamburger.svg" alt="Show Menu">
-		<div class="spacerhalfem"></div>
+		<!-- <div class="spacerhalfem"></div> -->
 	</label>
 	<input type="checkbox" id="open-menu">
 	<nav>

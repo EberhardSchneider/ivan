@@ -25,7 +25,7 @@ function showPage( $page ) {
 	$results['articles'] = $data['results'];
 	$results['totalRows'] = $data['totalRows'];
 
-	// get Page title from DB
+	// get Page info from DB
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 	$sql = "SELECT * FROM pages WHERE id=:page_id";
 	$st = $conn->prepare( $sql );
@@ -35,6 +35,7 @@ function showPage( $page ) {
 	$conn = null;
 
 	$results['pageTitle'] = $row['title'];
+	$results['headlinePage'] = $row['headlinePage'];
 
 	require( TEMPLATE_PATH . "/showpage.php");
 
@@ -47,9 +48,11 @@ function showArticle() {
 	}
 
 	$results = array();
-	$results['articles'] = Article::getById( (int)$_GET["articleId"]);
-	$results['pageTitle'] = $results['article']->title;
-	require( TEMPLATE_PATH . "/showpage.php");
+	
+	$article = Article::getArticleById( (int)$_GET["articleId"]);
+	$results['article'] = $article;
+	$results['pageTitle'] = $article->title;
+	require( TEMPLATE_PATH . "/showarticle.php");
 }
 
 function showWelcome() {
