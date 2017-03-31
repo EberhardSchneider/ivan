@@ -155,6 +155,16 @@ nav li a:hover {
   color: #777; }
 
 /* line 98, ../../components/sass/normal-screens/_layout.scss */
+.headlines {
+  margin: 5em 2em 6em; }
+/* line 101, ../../components/sass/normal-screens/_layout.scss */
+.headlines ul {
+  list-style: square; }
+/* line 104, ../../components/sass/normal-screens/_layout.scss */
+.headlines li {
+  margin-bottom: 1em; }
+
+/* line 109, ../../components/sass/normal-screens/_layout.scss */
 #footer {
   display: block;
   margin: 2em 0 2em;
@@ -166,7 +176,7 @@ nav li a:hover {
   width: 80%;
   font-size: 0.7em; }
 
-/* line 115, ../../components/sass/normal-screens/_layout.scss */
+/* line 126, ../../components/sass/normal-screens/_layout.scss */
 .login-form {
   position: absolute;
   top: 23%;
@@ -180,12 +190,12 @@ nav li a:hover {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px; }
-/* line 130, ../../components/sass/normal-screens/_layout.scss */
+/* line 141, ../../components/sass/normal-screens/_layout.scss */
 .login-form label {
   display: inline-block;
   width: 8em; }
 
-/* line 139, ../../components/sass/normal-screens/_layout.scss */
+/* line 150, ../../components/sass/normal-screens/_layout.scss */
 .adminHeader {
   position: absolute;
   left: 7%;
@@ -193,24 +203,32 @@ nav li a:hover {
   width: 15%;
   font-size: 1.2em; }
 
-/* line 149, ../../components/sass/normal-screens/_layout.scss */
+/* line 160, ../../components/sass/normal-screens/_layout.scss */
 .article-table {
   margin-top: 6em;
-  margin-bottom: 6em; }
-/* line 153, ../../components/sass/normal-screens/_layout.scss */
+  margin-bottom: 6em;
+  font-size: 0.8em; }
+/* line 165, ../../components/sass/normal-screens/_layout.scss */
 .article-table th {
   font-weight: bold;
   width: 15%;
   height: 2em;
-  border-bottom: 2px solid black; }
-/* line 160, ../../components/sass/normal-screens/_layout.scss */
-.article-table tr {
+  border-bottom: 2px solid black;
+  margin-bottom: 0.2em; }
+/* line 173, ../../components/sass/normal-screens/_layout.scss */
+.article-table tbody tr {
   height: 1.3em; }
+/* line 175, ../../components/sass/normal-screens/_layout.scss */
+.article-table tbody tr:hover {
+  background-color: #aab; }
+/* line 182, ../../components/sass/normal-screens/_layout.scss */
+.article-table tr:nth-child(2n) {
+  background-color: #eef; }
 
-/* line 166, ../../components/sass/normal-screens/_layout.scss */
+/* line 188, ../../components/sass/normal-screens/_layout.scss */
 #wrapper label {
   width: 15em; }
-/* line 170, ../../components/sass/normal-screens/_layout.scss */
+/* line 192, ../../components/sass/normal-screens/_layout.scss */
 #wrapper textarea {
   width: 20em;
   height: 30em; }

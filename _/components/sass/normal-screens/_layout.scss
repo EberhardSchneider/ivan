@@ -95,6 +95,17 @@ nav {
 	}
 }
 
+.headlines {
+	margin: 5em 2em 6em;
+
+	ul {
+		list-style: square;
+	}
+	li {
+		margin-bottom: 1em;
+	}
+}
+
 #footer {
 
 	display: block;
@@ -149,16 +160,27 @@ nav {
 .article-table {
 	margin-top: 6em;
 	margin-bottom: 6em;
+	font-size: 0.8em;
 
 	th {
 		font-weight: bold;
 		width: 15%;
 		height: 2em;
 		border-bottom: 2px solid black;
+		margin-bottom: 0.2em;
 	}
 
-	tr {
+	tbody tr {
 		height: 1.3em;
+		&:hover {
+			background-color: #aab;
+		}
+	}
+
+
+
+	tr:nth-child(2n) {
+		background-color: #eef;
 	}
 }
 

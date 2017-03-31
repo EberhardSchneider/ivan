@@ -165,7 +165,6 @@ public function insert() {
 	// Does the Article object already have an ID?
 	if (!is_null( $this->id )) trigger_error("Article::insert()Attempt to insert an Article object that already has its ID property set (to $this->id).", E_USER_ERROR );
 	
-	trigger_error("j");
 	// Insert the article
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 	$sql = "INSERT INTO articles (publicationDate, title,  headline, content, pageId) VALUES ( FROM_UNIXTIME(:publicationDate), :headline, :title, :content, :pageId);";

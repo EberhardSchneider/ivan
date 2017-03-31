@@ -40,7 +40,8 @@
 <?php 	$index = 0;
 		foreach($pages as $page) { 
 			$index++;  ?>
-				<input type="radio" name="pageId" id="<?php echo $index?>" value="<?php echo $index ?>" />
+				<input type="radio" name="pageId" id="<?php echo $index?>" value="<?php echo $index ?>" 
+				<?php if ($index == $results['article']->pageId) echo " checked"?> />
 				<label for="<?php echo $index?>"><?php echo $page['title'] ?></label>	
 <?php } ?>							
 			

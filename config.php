@@ -10,7 +10,11 @@ define("ADMIN_USERNAME","root");
 define("ADMIN_PASSWORD","root");
 define("SITE_ROOT","localhost/ivan");
 
-define("IMG_PATH","images");
+define("ARTICLE_IMAGE_PATH","images/articles");
+define("FULLSIZE_IMAGE_PATH","images/fullsize");
+define("THUMBNAILS_PATH","images/articles");
+define("JPEG_QUALITY","85");
+
 
 // here the required classes
 

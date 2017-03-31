@@ -46,7 +46,7 @@
 // get content under menu bar
 
 #wrapper {
-	top: 1em;
+	margin-top: 4em;
 	position: relative;
 	height: 115%;
 }
@@ -91,6 +91,17 @@ nav {
 			color: white !important;
 			
 		}
+	}
+}
+
+.headlines {
+	margin: 5em 2em 6em;
+
+	ul {
+		list-style: square;
+	}
+	li {
+		margin-bottom: 1em;
 	}
 }
 

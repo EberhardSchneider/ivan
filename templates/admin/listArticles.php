@@ -21,11 +21,14 @@
 	} 
 ?>
 	<table class="article-table">
+		<thead>
 		<tr>
 			<th>Einstelldatum</th>
 			<th>Eintrag</th>
 			<th>Seite</th>
 		</tr>
+		</thead>
+		<tbody>
 
 <?php foreach ( $results['articles'] as $article ) { ?>
 		<tr onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'">
@@ -39,7 +42,7 @@
 		</tr>
 <?php
 	}	
-?>		
+?>	</tbody>	
 	</table>
 
 	<p><?php echo $results['totalRows']?><?php echo ($results['totalRows'] != 1) ? ' Einträge' : ' Eintrag'?> insgesamt.</p>
