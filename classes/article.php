@@ -107,7 +107,7 @@ public function getArticleById( $id ) {
 
 public function getList( $numRows=1000000, $order="publicationDate DESC") {
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	$sql = "SELECT SQL_CALC_FOUND_ROWS *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
+	$sql = "SELECT SQL_CALC_FOUND_ROWS *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles ORDER BY " . $order . " LIMIT :numRows";
 	$st = $conn->prepare( $sql );
 	$st->bindValue(":numRows", $numRows, PDO::PARAM_INT);
 	$st->execute();
@@ -136,7 +136,7 @@ public function getList( $numRows=1000000, $order="publicationDate DESC") {
 
 public function getArticlesByPage( $page = 1, $numRows=100000, $order="publicationDate DESC") {
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	$sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE pageId = :pageId ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
+	$sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE pageId = :pageId ORDER BY " . $order . " LIMIT :numRows";
 	$st = $conn->prepare( $sql );
 	$st->bindValue(":numRows", $numRows, PDO::PARAM_INT);
 	$st->bindValue(":pageId", $page, PDO::PARAM_INT);
