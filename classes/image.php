@@ -22,14 +22,64 @@ class Image {
 	 */
 	public $source = null;
 
+/**
+	* @var int Size in the article: IMG_SMALL 0, IMG_MEDIUM 1, IMG_BIG 2, IMG_THUMB 3
+	*/
+	public $presentation_size = null;
+
+	/**
+	* @var int Orientation: IMG_PORTRAIT 0, IMG_LANDSCAPE 1
+	*/
+	public $orientation = null;
+
+	/**
+	* @var int width in pixels
+	*/
+	public $width = null;
+
+	/**
+	* @var int height in pixels
+	*/
+	public $height = null;
+
+
 /** 
- *	Sets the object's properties using the values in the supplied array
+ *	Uploads image file and sets properties according to image
 */
 
-public function __construct( $data = array()) {
-	if ( isset($data['id'])) $this->id = (int) $data['id'];
-	if ( isset($data['subtitle'])) $this->subtitle = $data['subtitle'];
-	if ( isset($data['source'])) $this->source = $data['source'];
+public function __construct( $file ) {
+	// check if argument is file
+	if (!is_file( $file )) {
+		trigger_error( "Image::__construct(): Please use valid file to construct new Image.", E_USER_ERROR);
+	}
+	// check if upload is correct
+	if ($file['error'] > 3) {
+ 		echo "Error: " . $file['error'];
+ 		die();
+ 	}
+
+ 	// check if extension is image extension
+ $valid_extensions = array( 'jpg', 'jpeg', 'gif', 'png');
+ $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+ if ( !in_array($extension, $valid_extensions )) {
+ 	echo "Extension not allowed. Upload image file!";
+ 	die();
+ }
+
+ // set file name with timestamp, to avoid collisions
+ $file_name = time() . '_' . $file['name'];
+ // set correct destination path, then upload image
+ $destination = SITE_ROOT . '/images/' . $file_name;
+ if (move_uploaded_file($fi
+ 		le['tmp_name'], $destination)) {
+ 	echo 'File ' . $file_name . ' succesfully uploaded';
+ }
+ else {
+ 	echo 'Image upload not succesful.';
+ 	die();
+ }
+
+
 }
 
 /**
@@ -89,7 +139,7 @@ public function update() {
 	 // Does the Image object have an ID?
     if ( is_null( $this->id ) ) trigger_error ( "Image::update(): Attempt to update an Image object that does not have its ID property set.", E_USER_ERROR );
 
-    $conn = PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
     $sql = "UPDATE images SET subtitle=:subtitle, source = :source WHERE id = :id";
     $st = $conn->prepare( $sql );
     $st->bindValue( ":subtitle", $this->subtitle, PDO::PARAM_STR );
@@ -103,9 +153,18 @@ public function delete() {
 	// Does the Image object have an ID?
     if ( is_null( $this->id ) ) trigger_error ( "Image::update(): Attempt to update an Image object that does not have its ID property set.", E_USER_ERROR );
 
-    $conn = PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
     $sql = "DELETE FROM images WHERE id = :id LIMIT 1";
     $st = $conn->prepare( $sql );
+    $st->bindValue(":id", $this->id, PDO::PARAM_INT );
+    $st->execute();
+    $conn = null;
+
+    // now delete all rows in the articleimage table with this image
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
+    $sql = "DELETE FROM articleimages WHERE image_id = :imageId LIMIT 1";
+    $st = $conn->prepare( $sql );
+    $st->bindValue(":imageId", $this->id, PDO::PARAM_INT );
     $st->execute();
     $conn = null;
 }

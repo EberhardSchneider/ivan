@@ -203,6 +203,7 @@ public function update() {
   $st->bindValue( ":pageId", $this->pageId, PDO::PARAM_INT );
   $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
   $st->execute();
+
   $conn = null;
 }
 /**

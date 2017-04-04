@@ -54,3 +54,75 @@ nav {
 		border-bottom: 2px solid black;
 	}
 }
+
+// _____________________________________ editArticle.php
+
+#wrapper {
+	label {
+		display:block;
+		margin-bottom: .4em;
+	}
+
+	input, textarea {
+		margin-bottom: 2em;
+	}
+
+	textarea {
+		width: 35em;
+		height: 30em;
+	}
+
+	.page-radiobuttons {
+		display: block;
+		margin-bottom: 2em;
+		
+
+		.page-radiobutton {
+				display: inline-block;
+				padding: 0 .7em;
+				border-left: 2px solid #aaa;
+				border-right: 2px solid #aaa;
+				input {
+					margin-bottom: 0 !important;
+				}
+
+			}
+			/*.input-wrapper input {
+				width: 1em;
+				left: 50%;
+				position: relative;
+				transform: translate(.5em, 0);
+			}*/
+			.input-wrapper {
+				text-align: center;
+			}
+	}
+
+	// images
+	.image-thumbs {
+		label {
+			display: inline-block !important;
+			max-width: 300px;
+		}
+		img {
+			height: 120px;
+			max-width: 300px;
+			width: auto;
+			float: left;
+		}
+		input[type=checkbox] {
+			display: none !important;
+		}
+	}
+
+	.image-options{
+		display: none;
+	}
+
+	input[type=checkbox]:checked ~ .image-options {
+		display: inline-block;
+		width: 60%;
+		float: right;
+	}
+
+}

@@ -184,16 +184,26 @@ nav {
 	}
 }
 
-#wrapper {
-	label {
-		width: 15em;
-	}
+// edit Article
 
-	textarea {
-		width: 20em;
-		height: 30em;
-	}
+.image-thumbs {
+	border: 3px solid #aaa;
+	padding: .3em;
 }
+
+.image-thumb {
+	display: block;
+}
+
+#image-form {
+	text-align: center;
+	padding: 1em;
+	margin: 0.2em;
+	border-radius: 15px;
+	background-color: #eef;
+}
+
+
 
 
 

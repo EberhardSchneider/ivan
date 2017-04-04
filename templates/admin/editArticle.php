@@ -16,35 +16,46 @@
 			<ul>
 				<li>
 					<label for="title">Titel des Eintrags</label>
-					<input type="text" name="title" id="title" placeholder="Name des Eintrags" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->title )?>" />
+					<input type="text" name="title" id="title" placeholder="Name des Eintrags" required autofocus maxlength="255" 
+						value="<?php echo htmlspecialchars( $results['article']->title )?>" />
 				</li>
 
 				<li>
 					<label for="headline">Headline</label>
-					<input type="text" name="headline" id="headline" placeholder="Headline" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->headline )?>" />
+					<input type="text" name="headline" id="headline" placeholder="Headline" required autofocus maxlength="255" 
+						value="<?php echo htmlspecialchars( $results['article']->headline )?>" />
 				</li>
 
 				<li>
 					<label for="content">Eintrag</label>
-					<textarea name="content" id="content"  placeholder="Inhalt des Eintrags" required maxlength="100000"><?php echo  $results['article']->content ?></textarea>
-				</li>
+					<textarea name="content" id="content"  placeholder="Inhalt des Eintrags" 
+					required maxlength="100000"><?php echo  $results['article']->content ?></textarea></li>
 
 				<li>
 					<label for="publicationDate">Einstelldatum</label>
-					<input type="date" name="publicationDate" id="publicationDate" placeholder="TT-MM-JJJJ" required maxlength="10" value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
+					<input type="date" name="publicationDate" id="publicationDate" placeholder="TT-MM-JJJJ" required maxlength="10" 
+						value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
 				</li>
 
-			</ul>
-
+				<li>
+					<div class="page-radiobuttons">
 			
 <?php 	$index = 0;
 		foreach($pages as $page) { 
 			$index++;  ?>
-				<input type="radio" name="pageId" id="<?php echo $index?>" value="<?php echo $index ?>" 
-				<?php if ($index == $results['article']->pageId) echo " checked"?> />
-				<label for="<?php echo $index?>"><?php echo $page['title'] ?></label>	
-<?php } ?>							
-			
+			<div class="page-radiobutton">
+					<div class="input-wrapper"><input type="radio" name="pageId" id="<?php echo $index?>" value="<?php echo $index ?>"
+					<?php if ($index == $results['article']->pageId) echo " checked"?> /></div>
+					<label for="<?php echo $index?>"><?php echo $page['title'] ?></label>	
+			</div>
+<?php } ?>
+					</div>	
+				</li>		
+				
+					
+
+				
+			</ul>
 
 			<div class="buttons">
 				<input type="submit" name="saveChanges" value="Änderungen speichern" />
@@ -53,8 +64,29 @@
 
 		</form>
 
-<?php if ( $results['article']->id) { ?>
-		<p><a href="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" onclick="return confirm('Diesen Eintrag löschen?')">Diesen Eintrag löschen?</a></p>
-<?php } ?>
+		<div class="images">
+					<div class="image-thumbs"></div>		
+					
+					<form enctype="multipart/form-data" id="image-form" >
+						<div class="row">
+							<label for="imageToUpload">Datei: </label><br>
+							<input type="file" name="fileToUpload" id="fileToUpload" />
+						</div>
+						<div class="row">
+							<input type="submit" value="Neues Bild hochladen">
+							<div class="image-preview"></div>
+						</div>
+					</form>
+				</div>	
+				<?php if ( $results['article']->id) { ?>
+		<!-- <p><a href="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" onclick="return confirm('Diesen Eintrag löschen?')">Diesen Eintrag löschen?</a></p> -->
+		<form action="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" method="post">
+			<button type="submit" onclick="return confirm('Diesen Eintrag löschen?')">Diesen Eintrag löschen?</button>
+		</form>
+		
+<?php } ?>	
+		</div>
 
-<?php include "templates/include/footer.php" ?>		
+
+
+<?php include "templates/admin/edit-footer.php" ?>		

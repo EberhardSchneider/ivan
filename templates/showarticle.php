@@ -14,7 +14,7 @@
 <?php  	$images = Image::getImagesByArticleId( $article->id );
 		foreach ($images as $image) {  ?>		
 			<div class="article-image">
-				<img src="<?php echo IMG_PATH . "/" . $image->source ?>" alt="<?php echo $image->subtitle ?>" />
+				<img src="<?php echo ARTICLE_IMAGE_PATH . "/" . $image->source ?>" alt="<?php echo $image->subtitle ?>" />
 			</div>
 <?php } ?>
 			<div class="content"><?php echo $article->content ?></div>
