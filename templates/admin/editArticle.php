@@ -41,19 +41,18 @@
 					<div class="page-radiobuttons">
 			
 <?php 	$index = 0;
+		// loop through all pages
 		foreach($pages as $page) { 
 			$index++;  ?>
 			<div class="page-radiobutton">
 					<div class="input-wrapper"><input type="radio" name="pageId" id="<?php echo $index?>" value="<?php echo $index ?>"
+
 					<?php if ($index == $results['article']->pageId) echo " checked"?> /></div>
 					<label for="<?php echo $index?>"><?php echo $page['title'] ?></label>	
 			</div>
 <?php } ?>
 					</div>	
-				</li>		
-				
-					
-
+				</li>
 				
 			</ul>
 
@@ -63,21 +62,22 @@
 			</div>
 
 		</form>
-
+<!-- 	Bilder werden nun auf Extra-Seite editiert -> editImages.php
 		<div class="images">
 					<div class="image-thumbs"></div>		
-					
-					<form enctype="multipart/form-data" id="image-form" >
-						<div class="row">
-							<label for="imageToUpload">Datei: </label><br>
-							<input type="file" name="fileToUpload" id="fileToUpload" />
-						</div>
-						<div class="row">
-							<input type="submit" value="Neues Bild hochladen">
-							<div class="image-preview"></div>
-						</div>
-					</form>
-				</div>	
+					<div class="image-form-wrapper">
+						<form enctype="multipart/form-data" id="image-form" >
+							<div class="column">
+								<label for="imageToUpload">Datei: </label><br>
+								<input type="file" name="fileToUpload" id="fileToUpload" />
+								<input type="submit" value="Neues Bild hochladen">
+							</div>
+							<div class="column">
+								<div class="image-preview"></div>
+							</div>
+						</form>
+					</div>
+				</div>	-->
 				<?php if ( $results['article']->id) { ?>
 		<!-- <p><a href="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" onclick="return confirm('Diesen Eintrag löschen?')">Diesen Eintrag löschen?</a></p> -->
 		<form action="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" method="post">

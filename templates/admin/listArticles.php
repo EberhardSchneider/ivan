@@ -16,7 +16,7 @@
 ?>
 
 <?php if ( isset( $results['statusMessage'] ) ) { ?>
-	<div class="estatusMessage"><?php echo $results['statusMessage'] ?></div>
+	<div class="statusMessage"><?php echo $results['statusMessage'] ?></div>
 <?php 
 	} 
 ?>
@@ -26,18 +26,22 @@
 			<th>Einstelldatum</th>
 			<th>Eintrag</th>
 			<th>Seite</th>
+			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 
 <?php foreach ( $results['articles'] as $article ) { ?>
-		<tr onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'">
-			<td><?php echo date('j.m.Y', $article->publicationDate)?></td>
-			<td>
+		<tr>
+			<td onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'"><?php echo date('j.m.Y', $article->publicationDate)?></td>
+			<td onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'">
 				<?php echo $article->title?>
 			</td>
-			<td>
+			<td onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'">
 				<?php echo $pages[$article->pageId-1]['title']; ?>
+			</td>
+			<td onclick="location='admin.php?action=editImages&amp;articleId=<?php echo $article->id?>'">
+				Edit Images
 			</td>
 		</tr>
 <?php

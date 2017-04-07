@@ -115,7 +115,7 @@ nav {
 		}
 	}
 
-	.image-options{
+	/**.image-options{
 		display: none;
 	}
 
@@ -123,6 +123,11 @@ nav {
 		display: inline-block;
 		width: 60%;
 		float: right;
-	}
+	} **/
 
+	.image-options {
+		font-size: 0.6em;
+		display: inline-block;
+		float: right;
+	}
 }

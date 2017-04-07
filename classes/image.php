@@ -44,14 +44,46 @@ class Image {
 
 
 /** 
- *	Uploads image file and sets properties according to image
+ *	Constructs new image from data given in an array
 */
 
-public function __construct( $file ) {
-	// check if argument is file
-	if (!is_file( $file )) {
-		trigger_error( "Image::__construct(): Please use valid file to construct new Image.", E_USER_ERROR);
+public function __construct( $data = array() ) {
+
+	if ( isset($data['id']) ) { $this->id = $data['id']; }
+	if ( isset($data['subtitle']) ) { $this->subtitle = $data['subtitle']; }
+	if ( isset($data['source']) ) { $this->source = $data['source']; }
+	if ( isset($data['presentation_size']) ) { $this->presentation_size = $data['presentation_size']; }
+	if ( isset($data['orientation']) ) { $this->orientation = $data['orientation']; }
+	if ( isset($data['width']) ) { $this->width = $data['width']; }
+	if ( isset($data['height']) ) { $this->height = $data['height']; }
+}
+
+/**
+ * Sets object's properties from values supplied by form post
+ */
+
+public function storeFromValues( $params ) {
+	$this->__construct( $params );
+}
+
+
+
+/**
+* handles newly uploaded Images:
+* 1) constructs new Image
+* 2) writes new Database entry
+* 3) creates and saves Images in different sizes (thumb, small, middle, large)
+* 4) returns reference to new Image instance
+* @param $file file object from upload form
+* @param $data data object from upload form
+*			['subtitle'], ['presentation_size']
+**/
+static function uploadImage( $file, $data  ) {
+	//  TODO: check if argument is file
+	if ( !is_file( $file ) ) {
+		die("Image::uploadImage:  Argument must be a file.");
 	}
+	
 	// check if upload is correct
 	if ($file['error'] > 3) {
  		echo "Error: " . $file['error'];
@@ -59,36 +91,37 @@ public function __construct( $file ) {
  	}
 
  	// check if extension is image extension
- $valid_extensions = array( 'jpg', 'jpeg', 'gif', 'png');
- $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
- if ( !in_array($extension, $valid_extensions )) {
- 	echo "Extension not allowed. Upload image file!";
- 	die();
- }
+	 $valid_extensions = array( 'jpg', 'jpeg', 'gif', 'png');
+	 $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+	 if ( !in_array($extension, $valid_extensions )) {
+	 	echo "Extension not allowed. Upload image file!";
+	 	die();
+	 }
 
- // set file name with timestamp, to avoid collisions
- $file_name = time() . '_' . $file['name'];
- // set correct destination path, then upload image
- $destination = SITE_ROOT . '/images/' . $file_name;
- if (move_uploaded_file($fi
- 		le['tmp_name'], $destination)) {
- 	echo 'File ' . $file_name . ' succesfully uploaded';
- }
- else {
- 	echo 'Image upload not succesful.';
- 	die();
- }
+	 // set file name with timestamp, to avoid collisions
+	 $file_name = time() . '_' . $file['name'];
+	 // set correct destination path, then upload image
+	 $destination = SITE_ROOT . FULLSIZE_IMAGE_PATH . $file_name;
+	 if (move_uploaded_file($file['tmp_name'], $destination)) {
+	 	echo 'File ' . $file_name . ' succesfully uploaded';
+	 }
+	 else {
+	 	echo 'Image upload not succesful.';
+	 	die();
+	 }
 
+	 // TODO:
+	 // save image in three sizes:
+	 // 1) ARTICLE_IMAGE_PATH . "/large/": large size (optimal for full width article size)
+	 // 2) ARTICLE_IAMGE_PATH . "/small/": small size (optimal for half columns size or smaller)
+	 // 2) THUMBNAILS_PATH: thumbnail size (not used in the moment)
 
+	 // create new Image() Element using information from image upload form
+	 // and store it: -> insert()
+	 
 }
 
-/**
- * Sets object's properties from values supplied dby form post
- */
 
-public function storeFromValues( $params ) {
-	$this->__construct( $params );
-}
 
 public function getImageById( $id ) {
 	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);

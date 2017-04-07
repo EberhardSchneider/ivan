@@ -43,6 +43,9 @@ switch( $action ) {
 	case 'deleteArticle':
 		deleteArticle();
 		break;
+	case 'editImages':
+		editImages();
+		break;
 	default:
 		listArticles();
 }
@@ -146,6 +149,13 @@ function editArticle() {
 			require( TEMPLATE_PATH . "/admin/editArticle.php" );
 		}
 
+}
+
+function editImages() {
+	$articleToEdit = article::getArticleById( (int)$_GET['articleId'] );
+	$results['pageTitle'] = "Bilder bearbeiten für Artikel: " . $articleToEdit->title;
+	$results['article'] = $articleToEdit;
+	require( TEMPLATE_PATH . "/admin/editImages.php");
 }
 
 
