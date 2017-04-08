@@ -22,6 +22,13 @@ define("JPEG_QUALITY","85");
 define("IMAGE_SIZE_SMALL","0");
 define("IMAGE_SIZE_MEDIUM","1");
 define("IMAGE_SIZE_BIG","2");
+// define exact size of different images
+// we only define width, to preserve ratio, we compute the height
+define("IMAGE_WIDTH_THUMB", "100");
+define("IMAGE_WIDTH_SMALL", "200");
+define("IMAGE_WIDTH_MEDIUM", "400");
+define("IMAGE_WIDTH_LARGE", "800");
+
 
 
 

@@ -11,9 +11,9 @@
 					<div class="image-form-wrapper">
 						<form enctype="multipart/form-data" id="image-form" >
 							<div class="column">
-								<label for="imageToUpload">Datei: </label><br>
+								<label for="imageToUpload">Neues Bild hochladen:</label><br>
 								<input type="file" name="fileToUpload" id="fileToUpload" />
-								<input type="submit" value="Neues Bild hochladen">
+								<input type="submit" value="Diese Datei hochladen">
 							</div>
 							<div class="column">
 								<div class="image-preview"></div>
@@ -21,7 +21,9 @@
 						</form>
 					</div>
 				</div>	
+				<button id="save-changes-button">Alle Änderungen speichern</button>
 	</div>
+
 
 
 

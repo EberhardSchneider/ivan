@@ -12,6 +12,8 @@ $(function() {
 		});
 
 
+
+
 		$.ajax({
 			type: 'POST',
 			url: 	'phpincludes/uploadImage.php',
@@ -20,6 +22,16 @@ $(function() {
 			contentType: false,
 			processData: false
 		});
+	});
+
+
+	$('#save-changes-button').on("click", function() {
+
+		data = new FormData();
+		$('.image-options-form').each( function( index, form ) {
+			$(form).submit();
+		});
+			
 	});
 
 	// show preview image when file is chosen

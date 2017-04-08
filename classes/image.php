@@ -158,10 +158,14 @@ public function insert() {
     if ( !is_null( $this->id ) ) trigger_error ( "Image::insert(): Attempt to insert an Image object that already has its ID property set (to $this->id).", E_USER_ERROR );
 
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
-    $sql = "INSERT INTO images ( subtitle, source ) VALUES ( :subtitle, :source )";
+    $sql = "INSERT INTO images ( subtitle, source, presentation_size, orientation, width, height  ) VALUES ( :subtitle, :source, :presentation_size, :orientation, :width, :height  )";
     $st = $conn->prepare( $sql );
     $st->bindValue( ":subtitle", $this->subtitle, PDO::PARAM_STR);
     $st->bindValue( ":source", $this->source, PDO::PARAM_STR);
+    $st->bindValue( ":presentation_size", $this->presentation_size, PDO::PARAM_INT);
+    $st->bindValue( ":orientation", $this->orientation, PDO::PARAM_INT);
+    $st->bindValue( ":width", $this->width, PDO::PARAM_INT);
+    $st->bindValue( ":height", $this->height, PDO::PARAM_INT);
     $st->execute();
     $this->id = $conn->lastInsertId();
     $conn = null;
@@ -173,11 +177,16 @@ public function update() {
     if ( is_null( $this->id ) ) trigger_error ( "Image::update(): Attempt to update an Image object that does not have its ID property set.", E_USER_ERROR );
 
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
-    $sql = "UPDATE images SET subtitle=:subtitle, source = :source WHERE id = :id";
+    $sql = "UPDATE images SET subtitle=:subtitle, source = :source, presentation_size=:presentation_size, orientation=:orientation, width=:width, height=:height WHERE id = :id";
     $st = $conn->prepare( $sql );
     $st->bindValue( ":subtitle", $this->subtitle, PDO::PARAM_STR );
     $st->bindValue( ":source", $this->source, PDO::PARAM_STR);
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+    $st->bindValue( ":presentation_size", $this->presentation_size, PDO::PARAM_INT);
+    $st->bindValue( ":orientation", $this->orientation, PDO::PARAM_INT);
+    $st->bindValue( ":width", $this->width, PDO::PARAM_INT);
+    $st->bindValue( ":height", $this->height, PDO::PARAM_INT);
+
     $st->execute();
     $conn = null;
 }

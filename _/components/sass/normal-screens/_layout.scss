@@ -205,9 +205,12 @@ nav {
 	}
 }
 
-#image-form {
-	padding: .5em;
+.image-form-wrapper {
+	position: relative;
+	display: block;
+	padding: 1.5em;
 	border: solid 2px black;
+	height: 11em;
 }
 
 
@@ -221,11 +224,12 @@ nav {
 }
 
 .image-preview {
-	width: 10em;
+	height: 10em;
+	float: right;
 	img {
-		width: 100%;
-		height: auto;
+		height: 100%;
 	}
+	
 }
 .clear-float {
 	display: block;
