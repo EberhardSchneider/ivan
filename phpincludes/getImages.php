@@ -6,7 +6,7 @@ require("../config.php");
  foreach ($images as $image)  { ?>
 			<div class="image-thumb">
 			
-			<form action="phpincludes/changeImageProperties.php" method="post"
+			<form action="" method="post"
 				id="image-options-<?php echo $image->id  ?>" 
 				class="image-options-form">
 			
@@ -38,7 +38,7 @@ require("../config.php");
 					</div>
 				
 				</div>	
-				<button type="button" onclick="deleteImageFromArticle(<?php echo $image->id ?>, <?php echo $_POST['articleId'] ?>)">LÖSCHEN</button>
+				<button type="button" onclick="if (confirm('Dieses Bild wirklich löschen?'))deleteImageFromArticle(<?php echo $image->id ?>, <?php echo $_POST['articleId'] ?>) ">LÖSCHEN</button>
 				</form>	
 				</div>
 				<div class="clearfloat"></div>

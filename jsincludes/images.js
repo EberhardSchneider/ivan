@@ -13,7 +13,8 @@ $(function() {
 
 		// now append article Id
 
-		data.append('articleId', $('#article-id').val() );
+		articleId = $('#article-id').val();
+		data.append('articleId', articleId );
 
 
 
@@ -24,7 +25,10 @@ $(function() {
 			data: data,
 			cache: false,
 			contentType: false,
-			processData: false
+			processData: false,
+			success: function() {
+				showImages( articleId );
+			}
 		});
 	});
 
@@ -33,8 +37,12 @@ $(function() {
 
 		data = new FormData();
 		$('.image-options-form').each( function( index, form ) {
-			$(form).submit();
+			$.post('phpincludes/changeImageProperties.php',$(form).serialize() );
 		});
+
+
+
+		window.location.replace( "admin.php?status=Gespeichert");
 			
 	});
 
@@ -74,7 +82,7 @@ function showImages( articleId ) {
 
 function deleteImageFromArticle( imageId, articleId ) {
 	$.post( "phpincludes/deleteImage.php", { "articleId": articleId, "imageId": imageId }, function(data ) {
-		alert( "Gelöscht." + data );
+		showImages( articleId );
 	});
 }
 

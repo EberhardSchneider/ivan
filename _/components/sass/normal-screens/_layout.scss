@@ -1,6 +1,4 @@
 
-// Small screens
-
 // sticky header
 
 .side-logo {
@@ -44,11 +42,13 @@ nav {
 	position: absolute;
 	left: 30%;
 	width: 60%;
+	max-width: 800px;
+	min-width: 500px;
 	top: 12%;
 	height: 75%;
 	overflow: hidden;
 	float:left;
-	max-width: 40em;
+	
 }
 
 
@@ -60,13 +60,14 @@ nav {
 .article {
 	border-top: 2px solid #ddd;
 	margin: 10px;
-	max-width: 32em;
 
 	.article-image {
+
 		position: relative;
 		display: inline-block;
 		margin: 1em;
 		float:right;
+
 		.portrait.image-small {
 			height: 12em;
 			width: auto;
