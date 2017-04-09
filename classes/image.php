@@ -167,6 +167,7 @@ public function insert() {
     $st->bindValue( ":width", $this->width, PDO::PARAM_INT);
     $st->bindValue( ":height", $this->height, PDO::PARAM_INT);
     $st->execute();
+    var_dump( $st->errorInfo() );
     $this->id = $conn->lastInsertId();
     $conn = null;
 

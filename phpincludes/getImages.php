@@ -12,7 +12,7 @@ require("../config.php");
 			
 				<input type="hidden" name="id" value="<?php echo $image->id ?>">
 				
-				<label for="image<?php echo $image->id ?>"><img src="<?php echo THUMBNAILS_PATH . "/" . $image->source ?>" alt=""></label>
+				<label for="image<?php echo $image->id ?>"><img src="<?php echo THUMBS_IMAGE_PATH . "/" . $image->source ?>" alt=""></label>
 				<input type="checkbox" id="image<?php echo $image->id ?>">
 				
 				<div class="image-options">
@@ -33,7 +33,8 @@ require("../config.php");
 					
 					<div class="image-subtitle-wrapper">
 						<label for="image_subtitle">Untertitel</label>
-							<input type="text" id="image_subtitle" name="image-subtitle" placeholder="subtitle">
+							<input type="text" id="image_subtitle" name="image-subtitle" placeholder="subtitle"
+								value="<?php echo $image->subtitle ?>">
 					</div>
 				
 				</div>	

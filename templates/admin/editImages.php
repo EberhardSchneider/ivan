@@ -10,6 +10,7 @@
 				<div class="image-thumbs"></div>		
 					<div class="image-form-wrapper">
 						<form enctype="multipart/form-data" id="image-form" >
+							<input type="hidden" id="article-id" name="articleId" value="<?php echo $_GET['articleId'] ?>">
 							<div class="column">
 								<label for="imageToUpload">Neues Bild hochladen:</label><br>
 								<input type="file" name="fileToUpload" id="fileToUpload" />

@@ -63,13 +63,28 @@ nav {
 	max-width: 32em;
 
 	.article-image {
-		width: 60%;
 		position: relative;
 		display: inline-block;
-		margin: .5em auto;
+		margin: 1em;
 		float:right;
-		img {
-			float: right;
+		.portrait.image-small {
+			height: 12em;
+			width: auto;
+		}
+
+		.landscape.image-small {
+			width: 12em;
+			height: auto;
+		}
+
+		.portrait.image-medium {
+			height: 24em;
+			width: auto;
+		}
+
+		.landscape.image-medium {
+			width: 24em;
+			height: auto;
 		}
 	}
 }

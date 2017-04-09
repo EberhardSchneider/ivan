@@ -11,6 +11,10 @@ $(function() {
 			data.append('file-'+i, file);
 		});
 
+		// now append article Id
+
+		data.append('articleId', $('#article-id').val() );
+
 
 
 

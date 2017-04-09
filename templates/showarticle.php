@@ -14,7 +14,24 @@
 <?php  	$images = Image::getImagesByArticleId( $article->id );
 		foreach ($images as $image) {  ?>		
 			<div class="article-image">
-				<img src="<?php echo ARTICLE_IMAGE_PATH . "/" . $image->source ?>" alt="<?php echo $image->subtitle ?>" />
+<?php 	$class = ($image->orientation == IMAGE_PORTRAIT) ? "portrait " : "landscape ";
+		switch ($image->presentation_size) {
+			case IMAGE_SIZE_SMALL:
+				$path = SMALL_IMAGE_PATH;
+				$class .= "image-small";
+				break;
+			case IMAGE_SIZE_MEDIUM:
+				$path = MEDIUM_IMAGE_PATH;
+				$class .= "image-medium";
+				break;
+			case IMAGE_SIZE_LARGE:
+				$path = LARGE_IMAGE_PATH;
+				$class .= "image-large";
+				break;
+		}
+?>			
+				<img src="<?php echo $path . "/" . $image->source ?>" alt="<?php echo $image->subtitle ?>" 
+					class="<?php echo $class ?>"/>
 			</div>
 <?php } ?>
 			<div class="content"><?php echo $article->content ?></div>
