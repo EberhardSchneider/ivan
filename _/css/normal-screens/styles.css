@@ -135,7 +135,7 @@ nav {
   left: 0;
   right: 0;
   height: 100%;
-  width: 50%;
+  width: 28em;
   float: left; }
 
 /* line 65, ../../components/sass/normal-screens/_layout.scss */
@@ -150,7 +150,7 @@ nav {
 .preview {
   position: absolute;
   display: inline-block;
-  width: 50%;
+  width: 60%;
   height: 100%;
   top: 0;
   right: 0; }
@@ -176,45 +176,89 @@ nav {
   height: auto; }
 /* line 110, ../../components/sass/normal-screens/_layout.scss */
 .article .article-image .portrait.image-medium {
+  display: block;
   height: 24em;
   width: auto; }
-/* line 115, ../../components/sass/normal-screens/_layout.scss */
+/* line 116, ../../components/sass/normal-screens/_layout.scss */
 .article .article-image .landscape.image-medium {
+  display: block;
   width: 24em;
   height: auto; }
-/* line 120, ../../components/sass/normal-screens/_layout.scss */
+/* line 122, ../../components/sass/normal-screens/_layout.scss */
 .article .article-image .portrait.image-large {
+  display: block;
   height: 80%;
   width: auto; }
-/* line 124, ../../components/sass/normal-screens/_layout.scss */
+/* line 127, ../../components/sass/normal-screens/_layout.scss */
 .article .article-image .landscape.image-large {
+  display: block;
   width: 100%;
   height: auto; }
 
 /* line 134, ../../components/sass/normal-screens/_layout.scss */
+img {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: .2em; }
+
+/* line 140, ../../components/sass/normal-screens/_layout.scss */
+.portrait.image-small {
+  height: 24em;
+  width: auto; }
+
+/* line 145, ../../components/sass/normal-screens/_layout.scss */
+.landscape.image-small {
+  width: 24em;
+  height: auto; }
+
+/* line 150, ../../components/sass/normal-screens/_layout.scss */
+.portrait.image-medium {
+  height: 40em;
+  width: auto;
+  display: block; }
+
+/* line 156, ../../components/sass/normal-screens/_layout.scss */
+.landscape.image-medium {
+  width: 40em;
+  height: auto;
+  display: block; }
+
+/* line 162, ../../components/sass/normal-screens/_layout.scss */
+.portrait.image-large {
+  height: 80%;
+  width: auto;
+  display: block; }
+
+/* line 167, ../../components/sass/normal-screens/_layout.scss */
+.landscape.image-large {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+/* line 176, ../../components/sass/normal-screens/_layout.scss */
 nav ul {
   top: 2em; }
-/* line 139, ../../components/sass/normal-screens/_layout.scss */
+/* line 181, ../../components/sass/normal-screens/_layout.scss */
 nav li {
   font-size: 1.2em;
   height: 2em;
   width: 100%;
   position: relative; }
-/* line 145, ../../components/sass/normal-screens/_layout.scss */
+/* line 187, ../../components/sass/normal-screens/_layout.scss */
 nav li a:hover {
   color: #777; }
 
-/* line 152, ../../components/sass/normal-screens/_layout.scss */
+/* line 194, ../../components/sass/normal-screens/_layout.scss */
 .headlines {
   margin: 5em 2em 6em; }
-/* line 155, ../../components/sass/normal-screens/_layout.scss */
+/* line 197, ../../components/sass/normal-screens/_layout.scss */
 .headlines ul {
   list-style: square; }
-/* line 158, ../../components/sass/normal-screens/_layout.scss */
+/* line 200, ../../components/sass/normal-screens/_layout.scss */
 .headlines li {
   margin-bottom: 1em; }
 
-/* line 163, ../../components/sass/normal-screens/_layout.scss */
+/* line 205, ../../components/sass/normal-screens/_layout.scss */
 #footer {
   display: block;
   margin: 2em 0 2em;
@@ -226,7 +270,7 @@ nav li a:hover {
   width: 80%;
   font-size: 0.7em; }
 
-/* line 180, ../../components/sass/normal-screens/_layout.scss */
+/* line 222, ../../components/sass/normal-screens/_layout.scss */
 .login-form {
   position: absolute;
   top: 23%;
@@ -240,12 +284,12 @@ nav li a:hover {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px; }
-/* line 195, ../../components/sass/normal-screens/_layout.scss */
+/* line 237, ../../components/sass/normal-screens/_layout.scss */
 .login-form label {
   display: inline-block;
-  width: 8em; }
+  width: 5em; }
 
-/* line 204, ../../components/sass/normal-screens/_layout.scss */
+/* line 246, ../../components/sass/normal-screens/_layout.scss */
 .adminHeader {
   position: absolute;
   left: 7%;
@@ -253,51 +297,51 @@ nav li a:hover {
   width: 15%;
   font-size: 1.2em; }
 
-/* line 214, ../../components/sass/normal-screens/_layout.scss */
+/* line 256, ../../components/sass/normal-screens/_layout.scss */
 .article-table {
   margin-top: 6em;
   margin-bottom: 6em;
   font-size: 0.8em; }
-/* line 219, ../../components/sass/normal-screens/_layout.scss */
+/* line 261, ../../components/sass/normal-screens/_layout.scss */
 .article-table th {
   font-weight: bold;
   width: 15%;
   height: 2em;
   border-bottom: 2px solid black;
   margin-bottom: 0.2em; }
-/* line 227, ../../components/sass/normal-screens/_layout.scss */
+/* line 269, ../../components/sass/normal-screens/_layout.scss */
 .article-table tbody tr {
   height: 1.3em; }
-/* line 229, ../../components/sass/normal-screens/_layout.scss */
+/* line 271, ../../components/sass/normal-screens/_layout.scss */
 .article-table tbody tr:hover {
   background-color: #aab; }
-/* line 236, ../../components/sass/normal-screens/_layout.scss */
+/* line 278, ../../components/sass/normal-screens/_layout.scss */
 .article-table tr:nth-child(2n) {
   background-color: #eef; }
 
-/* line 243, ../../components/sass/normal-screens/_layout.scss */
+/* line 285, ../../components/sass/normal-screens/_layout.scss */
 .image-thumbs {
   border: 3px solid #aaa;
   padding: .3em; }
-/* line 246, ../../components/sass/normal-screens/_layout.scss */
+/* line 288, ../../components/sass/normal-screens/_layout.scss */
 .image-thumbs label {
   font-size: .9em;
   font-weight: bold;
   vertical-align: top; }
-/* line 251, ../../components/sass/normal-screens/_layout.scss */
+/* line 293, ../../components/sass/normal-screens/_layout.scss */
 .image-thumbs:empty {
   display: none !important; }
 
-/* line 256, ../../components/sass/normal-screens/_layout.scss */
+/* line 298, ../../components/sass/normal-screens/_layout.scss */
 .image-thumb {
   display: block; }
-/* line 258, ../../components/sass/normal-screens/_layout.scss */
+/* line 300, ../../components/sass/normal-screens/_layout.scss */
 .image-thumb button {
   float: right;
   margin-right: 1em;
   font-size: .7em; }
 
-/* line 265, ../../components/sass/normal-screens/_layout.scss */
+/* line 307, ../../components/sass/normal-screens/_layout.scss */
 .image-form-wrapper {
   position: relative;
   display: block;
@@ -305,28 +349,29 @@ nav li a:hover {
   border: solid 2px black;
   height: 11em; }
 
-/* line 276, ../../components/sass/normal-screens/_layout.scss */
+/* line 318, ../../components/sass/normal-screens/_layout.scss */
 .column {
   display: inline-block;
   width: 49%;
   height: 7em;
   float: left; }
 
-/* line 283, ../../components/sass/normal-screens/_layout.scss */
+/* line 325, ../../components/sass/normal-screens/_layout.scss */
 .image-preview {
   height: 10em;
   float: right; }
-/* line 286, ../../components/sass/normal-screens/_layout.scss */
+/* line 328, ../../components/sass/normal-screens/_layout.scss */
 .image-preview img {
   height: 100%; }
 
-/* line 291, ../../components/sass/normal-screens/_layout.scss */
+/* line 333, ../../components/sass/normal-screens/_layout.scss */
 .clear-float {
   display: block; }
 
-/* line 298, ../../components/sass/normal-screens/_layout.scss */
+/* line 340, ../../components/sass/normal-screens/_layout.scss */
 .preview #wrapper {
-  left: 0 !important; }
+  left: 0 !important;
+  width: auto !important; }
 
 /* line 3, ../../components/sass/normal-screens/_modules.scss */
 .side-logo {
@@ -383,17 +428,18 @@ nav .active {
   	} **/ }
 /* line 64, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper label {
-  display: block;
   margin-bottom: .4em; }
-/* line 69, ../../components/sass/normal-screens/_modules.scss */
+/* line 68, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper input, #edit-wrapper textarea {
   margin-bottom: 2em; }
-/* line 73, ../../components/sass/normal-screens/_modules.scss */
+/* line 72, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper textarea {
-  width: 35em;
+  float: left;
+  width: 30em;
   height: 30em; }
 /* line 78, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper .page-radiobuttons {
+  font-size: .7em;
   display: block;
   margin-bottom: 2em;
   /*.input-wrapper input {
@@ -402,12 +448,10 @@ nav .active {
   	position: relative;
   	transform: translate(.5em, 0);
   }*/ }
-/* line 83, ../../components/sass/normal-screens/_modules.scss */
+/* line 84, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper .page-radiobuttons .page-radiobutton {
   display: inline-block;
-  padding: 0 .7em;
-  border-left: 2px solid #aaa;
-  border-right: 2px solid #aaa; }
+  padding: 0 .7em; }
 /* line 88, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper .page-radiobuttons .page-radiobutton input {
   margin-bottom: 0 !important; }
@@ -427,8 +471,9 @@ nav .active {
 /* line 116, ../../components/sass/normal-screens/_modules.scss */
 #edit-wrapper .image-thumbs input[type=checkbox] {
   display: none !important; }
-/* line 131, ../../components/sass/normal-screens/_modules.scss */
-#edit-wrapper .image-options {
+
+/* line 133, ../../components/sass/normal-screens/_modules.scss */
+.image-options {
   font-size: 0.6em;
   display: inline-block;
   float: right; }

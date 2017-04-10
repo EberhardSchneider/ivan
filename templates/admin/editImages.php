@@ -23,6 +23,7 @@
 					</div>
 				</div>	
 				<button id="save-changes-button">Alle Änderungen speichern</button>
+				<button onclick="window.location.replace('admin.php?action=editArticle&amp;articleId=<?php echo $_GET['articleId'] ?>')">Zum Artikel (Änderungen gehen verloren)</button>
 	</div>
 
 

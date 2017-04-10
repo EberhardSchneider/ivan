@@ -20,7 +20,7 @@ require("../config.php");
 					<h3>Image Options</h3>
 					<div class="image-size-wrapper">
 						<p>Size</p>
-						<label for="image_size_small">Small</label>
+					<!-- 	<label for="image_size_small">Small</label>
 							<input type="radio" name="radio_image_size_<?php echo $image->id ?>" value="0"
 								id="image_size_small" <?php echo ($image->presentation_size == 0) ? "checked" : "" ?> >
 						<label for="image_size_medium">Medium</label>
@@ -28,7 +28,13 @@ require("../config.php");
 							id="image_size_medium"  <?php echo ($image->presentation_size == 1) ? "checked" : "" ?> >
 						<label for="image_size_large">Large</label>
 							<input type="radio" name="radio_image_size_<?php echo $image->id ?>" value="2"
-							id="image_size_large" <?php echo ($image->presentation_size == 2) ? "checked" : "" ?> >
+							id="image_size_large" <?php echo ($image->presentation_size == 2) ? "checked" : "" ?> > -->
+
+							<select name="radio_image_size_<?php echo $image->id ?>" id="select-image-size" form="image-options-<?php echo $image->id  ?>">
+								<option value="0" <?php echo ($image->presentation_size == 0) ? "selected" : "" ?>>Small</option>
+								<option value="1" <?php echo ($image->presentation_size == 1) ? "selected" : "" ?>>Medium</option>
+								<option value="2" <?php echo ($image->presentation_size == 2) ? "selected" : "" ?>>Large</option>
+							</select>
 					</div>
 					
 					<div class="image-subtitle-wrapper">

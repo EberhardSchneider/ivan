@@ -7,7 +7,7 @@
 	
 	<div id="edit-wrapper">
 
-		<form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
+		<form action="admin.php?action=<?php echo $results['formAction']?>" method="post" id="edit-form">
 			<input type="hidden" name="articleId" value="<?php echo $results['article']->id ?>" />
 <?php if ( isset( $results['errorMessage'] ) ) { ?>
         <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
@@ -37,7 +37,7 @@
 						value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
 				</li>
 
-				<li>
+<!-- 				<li>
 					<div class="page-radiobuttons">
 			
 <?php 	$index = 0;
@@ -52,6 +52,15 @@
 			</div>
 <?php } ?>
 					</div>	
+				</li> -->
+
+				<li>
+					<select name="pageId" id="pageSelect" form="edit-form">
+<?php $index = 1;
+			foreach( $pages as $page ) { ?>
+						<option <?php if ($index == $results['article']->pageId) echo "selected "?> value="<?php echo $index++ ?>"><?php echo $page['title'] ?></option>
+<?php } ?>
+					</select>
 				</li>
 				
 			</ul>
@@ -70,6 +79,10 @@
 			onclick="if (confirm('Diesen Eintrag löschen?')) window.location.replace('admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>') ">Diesen Eintrag löschen?</button>
 
 			<button id="showPreview">Zeige Vorschau</button>
+
+			<button id="moveToImages" onclick="window.location.replace('admin.php?action=editImages&amp;articleId=<?php echo $results['article']->id ?>')">
+				Zu Bildern wechseln
+			</button>
 	
 		
 <?php } ?>	

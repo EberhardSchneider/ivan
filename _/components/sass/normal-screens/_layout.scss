@@ -58,7 +58,7 @@ nav {
 	left: 0;
 	right: 0;
 	height: 100%;
-	width: 50%;
+	width: 28em;
 	float: left;
 }
 
@@ -73,7 +73,7 @@ nav {
 .preview {
 	position: absolute;
 	display: inline-block;
-	width: 50%;
+	width: 60%;
 	height: 100%;
 	top:0;
 	right:0;
@@ -108,25 +108,67 @@ nav {
 		}
 
 		.portrait.image-medium {
+			display: block;
 			height: 24em;
 			width: auto;
 		}
 
 		.landscape.image-medium {
+			display: block;
 			width: 24em;
 			height: auto;
 		}
 
 		.portrait.image-large {
+			display: block;
 			height: 80%;
 			width: auto;
 		}
 		.landscape.image-large {
+			display: block;
 			width: 100%;
 			height: auto;
 		}
 	}
 }
+img {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: .2em;
+}
+
+	.portrait.image-small {
+			height: 24em;
+			width: auto;
+		}
+
+		.landscape.image-small {
+			width: 24em;
+			height: auto;
+		}
+
+		.portrait.image-medium {
+			height: 40em;
+			width: auto;
+			display: block;
+		}
+
+		.landscape.image-medium {
+			width: 40em;
+			height: auto;
+			display: block;
+		}
+
+		.portrait.image-large {
+			height: 80%;
+			width: auto;
+			display: block;
+		}
+		.landscape.image-large {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
 
 nav {
 	
@@ -194,7 +236,7 @@ nav {
 
     label {
     	display: inline-block;
-    	width: 8em;
+    	width: 5em;
     }
    
 
@@ -297,6 +339,7 @@ nav {
 .preview {
 	#wrapper {
 		left: 0 !important;
+		width: auto !important;
 	}
 }
 

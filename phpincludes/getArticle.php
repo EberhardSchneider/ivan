@@ -14,9 +14,7 @@
 
 <?php $content = $_POST['content'];
 			$images = Image::getImagesByArticleId( $_POST['article_id'] );
-			$content = insertImages( $content, $images, '[IMAGE]' );
-
-
+			$content = Image::insertImages( $content, $images, '[IMAGE]' );
  ?>
 			<div class="content"><?php echo $content ?></div>
 
@@ -62,41 +60,41 @@
 
 <?php 
 
-function insertImages( $content, $images, $tag ) {
+// function insertImages( $content, $images, $tag ) {
 
-	$index = 0;
+// 	$index = 0;
 
-	while ( $pos = strpos( $content, $tag ) ) {
+// 	while ( $pos = strpos( $content, $tag ) ) {
 
-		if ( ! ($index < count( $images) ) ) {
-			$content = str_replace( $tag, "", $content);
-			break;
-		}
-		$image = $images[ $index ];
+// 		if ( ! ($index < count( $images) ) ) {
+// 			$content = str_replace( $tag, "", $content);
+// 			break;
+// 		}
+// 		$image = $images[ $index ];
 
 
-		$class = ($image->orientation == IMAGE_PORTRAIT) ? "portrait " : "landscape ";
-		switch ($image->presentation_size) {
-			case IMAGE_SIZE_SMALL:
-				$path = SMALL_IMAGE_PATH;
-				$class .= "image-small";
-				break;
-			case IMAGE_SIZE_MEDIUM:
-				$path = MEDIUM_IMAGE_PATH;
-				$class .= "image-medium";
-				break;
-			case IMAGE_SIZE_LARGE:
-				$path = LARGE_IMAGE_PATH;
-				$class .= "image-large";
-				break;
-		} // switch
+// 		$class = ($image->orientation == IMAGE_PORTRAIT) ? "portrait " : "landscape ";
+// 		switch ($image->presentation_size) {
+// 			case IMAGE_SIZE_SMALL:
+// 				$path = SMALL_IMAGE_PATH;
+// 				$class .= "image-small";
+// 				break;
+// 			case IMAGE_SIZE_MEDIUM:
+// 				$path = MEDIUM_IMAGE_PATH;
+// 				$class .= "image-medium";
+// 				break;
+// 			case IMAGE_SIZE_LARGE:
+// 				$path = LARGE_IMAGE_PATH;
+// 				$class .= "image-large";
+// 				break;
+// 		} // switch
 		
-		$image_html = "<div class='article-image'>";
-		$image_html .= "<img src='$path/$image->source '  alt='$image->subtitle' class='$class'/></div>";
+// 		// $image_html = "<div class='article-image'>";
+// 		$image_html = "<img src='$path/$image->source '  alt='$image->subtitle' class='$class'/>";
 
 
-		$content = substr_replace( $content, $image_html, $pos, strlen( $tag ));
-		$index++;
-	}
-		return $content;
-	} ?>
+// 		$content = substr_replace( $content, $image_html, $pos, strlen( $tag ));
+// 		$index++;
+// 	}
+// 		return $content;
+// 	} ?>

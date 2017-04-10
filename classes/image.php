@@ -210,8 +210,6 @@ public static function uploadImage( $file_name, $full_path, $tmp_name, $article_
  $conn = null;
 
 
-
-
  // calculate ratios
  if ( $image->orientation == IMAGE_PORTRAIT ) {
  	$longer_side = $height;
@@ -260,6 +258,45 @@ public static function uploadImage( $file_name, $full_path, $tmp_name, $article_
  imagejpeg( $image_small, SITE_ROOT . "/" . SMALL_IMAGE_PATH . "/" . $file_name, (int)JPEG_QUALITY );
  imagejpeg( $image_thumb, SITE_ROOT . "/" . THUMBS_IMAGE_PATH . "/" . $file_name,  (int)JPEG_QUALITY);
   }
+
+ public static function insertImages( $content, $images, $tag ) {
+
+	$index = 0;
+
+	while ( $pos = strpos( $content, $tag ) ) {
+
+		if ( ! ($index < count( $images) ) ) {
+			$content = str_replace( $tag, "", $content);
+			break;
+		}
+		$image = $images[ $index ];
+
+
+		$class = ($image->orientation == IMAGE_PORTRAIT) ? "portrait " : "landscape ";
+		switch ($image->presentation_size) {
+			case IMAGE_SIZE_SMALL:
+				$path = SMALL_IMAGE_PATH;
+				$class .= "image-small";
+				break;
+			case IMAGE_SIZE_MEDIUM:
+				$path = MEDIUM_IMAGE_PATH;
+				$class .= "image-medium";
+				break;
+			case IMAGE_SIZE_LARGE:
+				$path = LARGE_IMAGE_PATH;
+				$class .= "image-large";
+				break;
+		} // switch
+		
+		// $image_html = "<div class='article-image'>";
+		$image_html = "<img src='$path/$image->source '  alt='$image->subtitle' class='$class'/>";
+
+
+		$content = substr_replace( $content, $image_html, $pos, strlen( $tag ));
+		$index++;
+	}
+		return $content;
+	}
 
 
 

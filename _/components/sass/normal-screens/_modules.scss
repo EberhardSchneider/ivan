@@ -62,7 +62,6 @@ nav {
 
 #edit-wrapper {
 	label {
-		display:block;
 		margin-bottom: .4em;
 	}
 
@@ -71,11 +70,13 @@ nav {
 	}
 
 	textarea {
-		width: 35em;
+		float: left;
+		width: 30em;
 		height: 30em;
 	}
 
 	.page-radiobuttons {
+		font-size: .7em;
 		display: block;
 		margin-bottom: 2em;
 		
@@ -83,8 +84,7 @@ nav {
 		.page-radiobutton {
 				display: inline-block;
 				padding: 0 .7em;
-				border-left: 2px solid #aaa;
-				border-right: 2px solid #aaa;
+				
 				input {
 					margin-bottom: 0 !important;
 				}
@@ -128,9 +128,10 @@ nav {
 		float: right;
 	} **/
 
+}
+
 	.image-options {
 		font-size: 0.6em;
 		display: inline-block;
 		float: right;
 	}
-}

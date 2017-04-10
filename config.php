@@ -29,9 +29,9 @@ define("IMAGE_LANDSCAPE", "1");
 // define exact size of different images
 // we only define larger side, to preserve ratio, we compute the other
 define("IMAGE_PIXEL_SIZE_THUMB", "150");
-define("IMAGE_PIXEL_SIZE_SMALL", "400");
-define("IMAGE_PIXEL_SIZE_MEDIUM", "800");
-define("IMAGE_PIXEL_SIZE_LARGE", "1200");
+define("IMAGE_PIXEL_SIZE_SMALL", "300");
+define("IMAGE_PIXEL_SIZE_MEDIUM", "600");
+define("IMAGE_PIXEL_SIZE_LARGE", "900");
 
 
 

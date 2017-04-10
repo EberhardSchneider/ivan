@@ -36,13 +36,21 @@ $(function() {
 	$('#save-changes-button').on("click", function() {
 
 		data = new FormData();
+		forms = $('.image-options-form');
+		nForms = forms.length-1;
 		$('.image-options-form').each( function( index, form ) {
-			$.post('phpincludes/changeImageProperties.php',$(form).serialize() );
+			console.log(index +"  :  " + nForms);
+			if (index == nForms) {
+				$.post('phpincludes/changeImageProperties.php',$(form).serialize(), function( data ) { window.location.replace( 'admin.php') } );
+			} else {
+				$.post('phpincludes/changeImageProperties.php',$(form).serialize() );
+			}
+			
 		});
 
 
 
-		window.location.replace( "admin.php?status=Gespeichert");
+		
 			
 	});
 
