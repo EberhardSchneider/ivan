@@ -29,9 +29,6 @@
 		// Articles page
 	
 		foreach ($results['articles'] as $article) {  
-
-
-
 		?>
 
 	<div class="article">

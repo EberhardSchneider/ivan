@@ -215,14 +215,25 @@ public function update() {
     // Does the Article object have an ID?
     if ( is_null( $this->id ) ) trigger_error ( "Article::delete(): Attempt to delete an Article object that does not have its ID property set.", E_USER_ERROR );
  
+
+ 		// delete all images which are connected to the article
+		$images = Image::getImagesByArticleId( $this->id );
+
+		foreach ($images as $image) {
+			$image->delete();
+		}
+
     // Delete the Article
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $st = $conn->prepare ( "DELETE FROM articles WHERE id = :id LIMIT 1" );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
     $st->execute();
+    var_dump( $st->errorInfo() );
     $conn = null;
   }
- 
+
+
+  
 
 
 

@@ -1,4 +1,4 @@
-<?php include "templates/include/header.php" ?>
+<?php include "templates/admin/admin-header.php" ?>
 	<div class="side-logo">
 		<span class="title"><a href=".">Ivan Bazak</a></span>
 	</div>

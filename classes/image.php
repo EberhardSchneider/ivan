@@ -68,58 +68,7 @@ public function storeFromValues( $params ) {
 
 
 
-/**
-* handles newly uploaded Images:
-* 1) constructs new Image
-* 2) writes new Database entry
-* 3) creates and saves Images in different sizes (thumb, small, middle, large)
-* 4) returns reference to new Image instance
-* @param $file file object from upload form
-* @param $data data object from upload form
-*			['subtitle'], ['presentation_size']
-**/
-static function uploadImage( $file, $data  ) {
-	//  TODO: check if argument is file
-	if ( !is_file( $file ) ) {
-		die("Image::uploadImage:  Argument must be a file.");
-	}
-	
-	// check if upload is correct
-	if ($file['error'] > 3) {
- 		echo "Error: " . $file['error'];
- 		die();
- 	}
 
- 	// check if extension is image extension
-	 $valid_extensions = array( 'jpg', 'jpeg', 'gif', 'png');
-	 $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-	 if ( !in_array($extension, $valid_extensions )) {
-	 	echo "Extension not allowed. Upload image file!";
-	 	die();
-	 }
-
-	 // set file name with timestamp, to avoid collisions
-	 $file_name = time() . '_' . $file['name'];
-	 // set correct destination path, then upload image
-	 $destination = SITE_ROOT . FULLSIZE_IMAGE_PATH . $file_name;
-	 if (move_uploaded_file($file['tmp_name'], $destination)) {
-	 	echo 'File ' . $file_name . ' succesfully uploaded';
-	 }
-	 else {
-	 	echo 'Image upload not succesful.';
-	 	die();
-	 }
-
-	 // TODO:
-	 // save image in three sizes:
-	 // 1) ARTICLE_IMAGE_PATH . "/large/": large size (optimal for full width article size)
-	 // 2) ARTICLE_IAMGE_PATH . "/small/": small size (optimal for half columns size or smaller)
-	 // 2) THUMBNAILS_PATH: thumbnail size (not used in the moment)
-
-	 // create new Image() Element using information from image upload form
-	 // and store it: -> insert()
-	 
-}
 
 
 
@@ -196,6 +145,15 @@ public function delete() {
 	// Does the Image object have an ID?
     if ( is_null( $this->id ) ) trigger_error ( "Image::update(): Attempt to update an Image object that does not have its ID property set.", E_USER_ERROR );
 
+    // delete all files
+		$file_name = $this->source;
+
+		unlink ( SITE_ROOT . '/' . FULLSIZE_IMAGE_PATH . '/' .$file_name );
+		unlink ( SITE_ROOT . '/' . LARGE_IMAGE_PATH . '/' . $file_name );
+		unlink ( SITE_ROOT . '/' . MEDIUM_IMAGE_PATH . '/' . $file_name );
+		unlink ( SITE_ROOT . '/' . SMALL_IMAGE_PATH . '/' . $file_name );
+		unlink ( SITE_ROOT . '/' . THUMBS_IMAGE_PATH . '/' . $file_name );
+
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
     $sql = "DELETE FROM images WHERE id = :id LIMIT 1";
     $st = $conn->prepare( $sql );
@@ -211,6 +169,98 @@ public function delete() {
     $st->execute();
     $conn = null;
 }
+
+public static function uploadImage( $file_name, $full_path, $tmp_name, $article_id, $extension ) {
+
+  	if (move_uploaded_file($tmp_name, $full_path)) {
+ 	echo 'File ' . $file_name . ' succesfully uploaded';
+ }
+ else {
+ 	echo 'Something occured';
+ 	die();
+ }
+
+ // now the file is uploaded an we can start manipulating
+
+ $actual_image = $full_path;
+
+ // current size
+ list( $width, $height ) = getimagesize( $actual_image );
+
+// create new Image instance and set orientation, width and height
+ $image = new Image();
+ $image->presentation_size = IMAGE_SIZE_SMALL;
+ $image->orientation = ($width < $height) ? IMAGE_PORTRAIT : IMAGE_LANDSCAPE;
+ $image->width = $width;
+ $image->height = $height;
+
+ $image->source = $file_name;
+ $image->articleId = $article_id;
+
+ $image->insert();
+
+ // now create entry in articleimages table
+ $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
+ $sql = "INSERT INTO articleimages ( article_id, image_id) VALUES ( :articleId, :imageId )";
+ $st = $conn->prepare( $sql );
+ $st->bindValue( ":articleId", $article_id, PDO::PARAM_INT );
+ $st->bindValue( ":imageId", $image->id, PDO::PARAM_INT );
+ $st->execute();
+
+ $conn = null;
+
+
+
+
+ // calculate ratios
+ if ( $image->orientation == IMAGE_PORTRAIT ) {
+ 	$longer_side = $height;
+ }
+ else {
+ 	$longer_side = $width;
+ }
+
+ $large_ratio = IMAGE_PIXEL_SIZE_LARGE / $longer_side;
+ $medium_ratio = IMAGE_PIXEL_SIZE_MEDIUM / $longer_side;
+ $small_ratio = IMAGE_PIXEL_SIZE_SMALL / $longer_side;
+ $thumb_ratio = IMAGE_PIXEL_SIZE_THUMB / $longer_side;
+
+
+// create images in correct size
+ $image_large = imagecreatetruecolor( $width * $large_ratio, $height * $large_ratio);
+ $image_medium = imagecreatetruecolor( $width * $medium_ratio, $height * $medium_ratio);
+ $image_small = imagecreatetruecolor( $width * $small_ratio, $height * $small_ratio);
+ $image_thumb = imagecreatetruecolor( $width * $thumb_ratio, $height * $thumb_ratio);
+
+ switch ($extension) {
+ 		case 'jpg':
+ 			$source = imagecreatefromjpeg( $actual_image );
+ 			break;
+ 		case 'jpeg':
+ 			$source = imagecreatefromjpeg( $actual_image );
+ 			break;
+ 		case 'gif':
+ 			$source = imagecreatefromgif( $actual_image );
+ 			break;
+ 		case 'png':
+ 			$source = imagecreatefrompng( $actual_image );
+ 			break;
+ 		default:
+ 			echo 'Unknown file type.';
+ 			die();
+ }
+
+ imagecopyresized($image_large, $source, 0, 0, 0, 0, $width * $large_ratio, $height * $large_ratio, $width, $height);
+ imagecopyresized($image_medium, $source, 0, 0, 0, 0, $width * $medium_ratio, $height * $medium_ratio, $width, $height);
+ imagecopyresized($image_small, $source, 0, 0, 0, 0, $width * $small_ratio, $height * $small_ratio, $width, $height);
+ imagecopyresized($image_thumb, $source, 0, 0, 0, 0, $width * $thumb_ratio, $height * $thumb_ratio, $width, $height);
+
+ imagejpeg( $image_large, SITE_ROOT . "/" . LARGE_IMAGE_PATH . "/" . $file_name, (int)JPEG_QUALITY );
+ imagejpeg( $image_medium, SITE_ROOT . "/" . MEDIUM_IMAGE_PATH . "/" . $file_name, (int)JPEG_QUALITY );
+ imagejpeg( $image_small, SITE_ROOT . "/" . SMALL_IMAGE_PATH . "/" . $file_name, (int)JPEG_QUALITY );
+ imagejpeg( $image_thumb, SITE_ROOT . "/" . THUMBS_IMAGE_PATH . "/" . $file_name,  (int)JPEG_QUALITY);
+  }
+
 
 
 }

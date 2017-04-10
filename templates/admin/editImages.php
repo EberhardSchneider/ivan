@@ -1,4 +1,4 @@
-<?php include "templates/include/header.php" ?>
+<?php include "templates/admin/admin-header.php" ?>
 
 	<div class="adminHeader">
 		<h2>Admin Seite</h2>

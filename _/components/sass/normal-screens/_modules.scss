@@ -9,6 +9,10 @@
 .article {
 	margin-top: 2.5em;
 	padding: 5px;
+
+		font-size: 0.8em;
+		line-height: 1.5;
+		text-align: justify;
 	
 	h2 {
 		margin-top: 2em;
@@ -22,7 +26,6 @@
 
 	p {
 		margin-top: 0.5em;
-		font-size: 0.8em;
 		line-height: 1.5;
 		text-align: justify;
 	}
@@ -57,7 +60,7 @@ nav {
 
 // _____________________________________ editArticle.php
 
-#wrapper {
+#edit-wrapper {
 	label {
 		display:block;
 		margin-bottom: .4em;

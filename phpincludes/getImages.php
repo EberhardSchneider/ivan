@@ -44,4 +44,3 @@ require("../config.php");
 				<div class="clearfloat"></div>
 			
 			<?php }  ?>
-		</div>

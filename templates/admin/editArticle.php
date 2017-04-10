@@ -1,11 +1,11 @@
-<?php include "templates/include/header.php" ?>
+<?php include "templates/admin/admin-header.php" ?>
 
 	<div class="adminHeader">
 		<h2>Admin Seite</h2>
 		<p>Sie sind als <b><?php echo htmlspecialchars($_SESSION['username']) ?></b> eingeloggt.<br> <a href="admin.php?action=logout">Log out</a></p>
 	</div>
 	
-	<div id="wrapper">
+	<div id="edit-wrapper">
 
 		<form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
 			<input type="hidden" name="articleId" value="<?php echo $results['article']->id ?>" />
@@ -62,31 +62,20 @@
 			</div>
 
 		</form>
-<!-- 	Bilder werden nun auf Extra-Seite editiert -> editImages.php
-		<div class="images">
-					<div class="image-thumbs"></div>		
-					<div class="image-form-wrapper">
-						<form enctype="multipart/form-data" id="image-form" >
-							<div class="column">
-								<label for="imageToUpload">Datei: </label><br>
-								<input type="file" name="fileToUpload" id="fileToUpload" />
-								<input type="submit" value="Neues Bild hochladen">
-							</div>
-							<div class="column">
-								<div class="image-preview"></div>
-							</div>
-						</form>
-					</div>
-				</div>	-->
+
 				<?php if ( $results['article']->id) { ?>
 		<!-- <p><a href="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" onclick="return confirm('Diesen Eintrag löschen?')">Diesen Eintrag löschen?</a></p> -->
-		<form action="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>" method="post">
-			<button type="submit" onclick="return confirm('Diesen Eintrag löschen?')">Diesen Eintrag löschen?</button>
-		</form>
+		
+			<button 
+			onclick="if (confirm('Diesen Eintrag löschen?')) window.location.replace('admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>') ">Diesen Eintrag löschen?</button>
+
+			<button id="showPreview">Zeige Vorschau</button>
+	
 		
 <?php } ?>	
-		</div>
 
+		</div>
+<div class="preview"></div>
 
 
 <?php include "templates/admin/edit-footer.php" ?>		

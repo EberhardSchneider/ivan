@@ -26,7 +26,6 @@ if ( $action != "login" && $action != "logout" && !$username ) {
 
 
 
-
 switch( $action ) {
 	case 'login':
 		login();
@@ -165,7 +164,8 @@ function deleteArticle() {
 		header( "Location: admin.php?error=articleNotFound" );
 		return;
 	}
-
+	
+	var_dump( $article );
 	$article->delete();
 	header( "Location: admin.php?status=articleDeleted" );
 
