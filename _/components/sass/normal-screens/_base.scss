@@ -1,6 +1,8 @@
 // some basic specifications
 
-body { 
+body {
+
+	@include box-sizing(border-box);
 
 	font-family: Verdana, sans-serif;
 	font-size: 16px;

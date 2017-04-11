@@ -32,7 +32,7 @@
 					required maxlength="100000"><?php echo  $results['article']->content ?></textarea></li>
 
 				<li>
-					<label for="publicationDate">Einstelldatum</label>
+					<label for="publicationDate">Veröffentlichung</label>
 					<input type="date" name="publicationDate" id="publicationDate" placeholder="TT-MM-JJJJ" required maxlength="10" 
 						value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
 				</li>
@@ -79,7 +79,6 @@
 			<button 
 			onclick="if (confirm('Diesen Eintrag löschen?')) window.location.replace('admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>') ">Diesen Eintrag löschen?</button>
 
-			<button id="showPreview">Zeige Vorschau</button>
 
 			<button id="moveToImages" onclick="window.location.replace('admin.php?action=editImages&amp;articleId=<?php echo $results['article']->id ?>')">
 				Zu Bildern wechseln
@@ -91,8 +90,11 @@
 		</div>
 <div class="preview">
 	<div class="wrap-iframe">>
-		<iframe src="index.php?action=showArticle&amp;articleId=<?php echo $results['article']->id ?> " frameborder="0"></iframe>
+		<iframe id="iframe_preview"
+			src="index.php?action=showArticle&amp;articleId=<?php echo $results['article']->id ?> " frameborder="0"></iframe>
+
 	</div>
+	<button id="showPreview">Zeige Vorschau</button>
 </div>
 
 

@@ -11,7 +11,7 @@
 }
 
 nav {
-	font-size: .8em;
+	font-size: .9em;
 	display: inline;
 	position: fixed;
 	top: 35%;
@@ -19,6 +19,8 @@ nav {
 	width: 20%;
 	height: 60%;
 	color: black;
+
+	letter-spacing: 1px;
 	li{
 		margin-top: 1em;
 	}
@@ -46,7 +48,10 @@ nav {
 #wrapper {
 	display: inline-block;
 	position: absolute;
-	left: 30%;
+	left: 20em;
+
+	padding-left: 4em;
+
 	width: 60%;
 	max-width: 800px;
 	min-width: 500px;
@@ -120,7 +125,7 @@ iframe {
 
 
 .article {
-	border-top: 2px solid #ddd;
+	border-top: 2px solid #eee;
 	margin: 10px;
 	overflow: hidden;
 
@@ -375,6 +380,12 @@ nav {
 		left: 0 !important;
 		width: auto !important;
 	}
+}
+
+#showPreview {
+	position: absolute;
+	right: 15em;
+	top: 2em;
 }
 
 

@@ -71,12 +71,24 @@ nav {
 		margin-bottom: .4em;
 		width: 9em;
 	}
+	input {
+		text-align: center;
+		&#title, &#headline {
+			width: 16em;
+		}
+		&#publicationDate {
+			width: 6em;
+		}
+
+	}
 
 	input, textarea {
 		margin-bottom: 1em;
 		background-color: #e0eaf1;
 		border-radius: 3px;
 		padding: 0.3em;
+		outline: none;
+		border: 2px solid #aaa;
 	}
 
 	textarea {

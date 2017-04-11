@@ -9,7 +9,11 @@ function showPreview( articleId ) {
 						title: $('#title').val(),
 						content: $('#content').val() }, 
 					function( data ) {
-						$('.preview').html( data );
-						$('.preview  #wrapper').mCustomScrollbar( { theme: 'dark'});
+						var iframe = $('iframe')[0];
+						iframe = iframe.contentWindow || iframe.contentDocument.document || iframe.contentDocument;
+						iframe.document.open();
+						iframe.document.write(data);
+						iframe.document.close();
+						$('.preview  #wrapper', $('iframe').contents() ).mCustomScrollbar( { theme: 'dark'});
 					});
 }
