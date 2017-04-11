@@ -1,9 +1,9 @@
 <?php include "templates/admin/admin-header.php" ?>
 
-	<div class="adminHeader">
+	<!-- <div class="adminHeader">
 		<h2>Admin Seite</h2>
 		<p>Sie sind als <b><?php echo htmlspecialchars($_SESSION['username']) ?></b> eingeloggt.<br> <a href="admin.php?action=logout">Log out</a></p>
-	</div>
+	</div> -->
 	
 	<div id="edit-wrapper">
 
@@ -55,6 +55,7 @@
 				</li> -->
 
 				<li>
+					<label for="pageId">Seite</label>
 					<select name="pageId" id="pageSelect" form="edit-form">
 <?php $index = 1;
 			foreach( $pages as $page ) { ?>
@@ -88,7 +89,11 @@
 <?php } ?>	
 
 		</div>
-<div class="preview"></div>
+<div class="preview">
+	<div class="wrap-iframe">>
+		<iframe src="index.php?action=showArticle&amp;articleId=<?php echo $results['article']->id ?> " frameborder="0"></iframe>
+	</div>
+</div>
 
 
 <?php include "templates/admin/edit-footer.php" ?>		

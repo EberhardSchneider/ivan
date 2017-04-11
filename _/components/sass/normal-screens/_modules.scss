@@ -61,18 +61,29 @@ nav {
 // _____________________________________ editArticle.php
 
 #edit-wrapper {
+
+	ul { 
+		margin-top: 3em;
+	}
 	label {
+		font-size: .8em;
+		display: inline-block;
 		margin-bottom: .4em;
+		width: 9em;
 	}
 
 	input, textarea {
-		margin-bottom: 2em;
+		margin-bottom: 1em;
+		background-color: #e0eaf1;
+		border-radius: 3px;
+		padding: 0.3em;
 	}
 
 	textarea {
 		float: left;
 		width: 30em;
 		height: 30em;
+
 	}
 
 	.page-radiobuttons {
