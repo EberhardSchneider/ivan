@@ -1,0 +1,161 @@
+// ************** HEADER
+
+.side-logo {
+	font-size: 1.8em;
+}
+
+//  *************** Content
+
+.article {
+	margin-top: 2.5em;
+	padding: 5px;
+
+		font-size: 0.8em;
+		line-height: 1.5;
+		text-align: justify;
+	
+	h2 {
+		margin-top: 2em;
+		font-size: 1.15em;
+		margin-bottom: 1em;
+	}
+	h3 {
+		font-size: 1.4em;
+		margin-top: 1.3em;
+	}
+
+	p {
+		margin-top: 0.5em;
+		line-height: 1.5;
+		text-align: justify;
+	}
+
+	.title {
+		font-size: 1.6em;
+		margin-bottom: 3em;
+	}
+
+	iframe {
+		display: inline-block;
+		
+	}
+}
+
+
+
+
+// SIDE-MENU
+
+// disable menu button
+
+input#open-menu {
+	display: none;
+}
+
+
+label.open-menu-label {
+	display: none;
+}
+
+nav {
+	.active {
+		border-bottom: 2px solid black;
+	}
+}
+
+// _____________________________________ editArticle.php
+
+#edit-wrapper {
+
+	ul { 
+		margin-top: 3em;
+	}
+	label {
+		font-size: .8em;
+		display: inline-block;
+		margin-bottom: .4em;
+		width: 9em;
+	}
+	input {
+		text-align: center;
+		&#title, &#headline {
+			width: 16em;
+		}
+		&#publicationDate {
+			width: 14em;
+		}
+
+	}
+
+	input[type=text], input[type=date],  select, textarea {
+		margin-bottom: 1em;
+		background-color: #e0eaf1;
+		border-radius: 3px;
+		padding: 0.3em;
+		outline: none;
+		border: 2px solid #aaa;
+	}
+
+	textarea {
+		float: left;
+		width: 30em;
+		height: 30em;
+	}
+
+
+
+	button {
+		border-radius: 3px;
+		outline: none;
+		border: 2px solid #aaa;
+		padding: 0.3em;
+	}
+
+
+
+	
+
+
+	.input-wrapper {
+				text-align: center;
+			}
+	}
+
+
+button#moveToImages {
+	position: fixed;
+	bottom: 3em;
+	right: 5em;
+}
+
+button#showPreview {
+	position: fixed;
+	top: 40em;
+	right: 20em;
+}
+
+
+	// images
+	.image-thumbs {
+		label {
+			display: inline-block !important;
+			max-width: 300px;
+		}
+		img {
+			height: 120px;
+			max-width: 300px;
+			width: auto;
+			float: left;
+		}
+		input[type=checkbox] {
+			display: none !important;
+		}
+	}
+
+
+
+	.image-options {
+		font-size: 0.6em;
+		display: inline-block;
+		float: right;
+	}

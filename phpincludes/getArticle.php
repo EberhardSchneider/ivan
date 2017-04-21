@@ -23,7 +23,7 @@
 	</div>
 
 	<div class="currentPage"> <!-- position fixed/absolute -->
-		<?php echo htmlspecialchars( $_POST['title']) ?>
+		Aktuelle Seite
 	</div>
 
 	<div id="container">
@@ -32,7 +32,7 @@
 ?>
 
 
-<div id="wrapper">
+<div id="wrapper" class="mCustomScrollbar">
 	<div id="articles"> <!-- stays so that css is consistent with articles page -->
 
 	<div class="article">
@@ -85,6 +85,15 @@
 	</div>
 
 </div>
+
+<?php include "../templates/include/footer.php"; ?>
+
+<script>
+	$( function() {
+		$('#wrapper').mCustomScrollbar();
+	});
+
+</script>
 
 <?php 
 

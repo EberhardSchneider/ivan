@@ -228,7 +228,6 @@ public function update() {
     $st = $conn->prepare ( "DELETE FROM articles WHERE id = :id LIMIT 1" );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
     $st->execute();
-    var_dump( $st->errorInfo() );
     $conn = null;
   }
 

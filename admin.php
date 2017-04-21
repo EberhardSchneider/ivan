@@ -165,7 +165,7 @@ function deleteArticle() {
 		return;
 	}
 	
-	var_dump( $article );
+
 	$article->delete();
 	header( "Location: admin.php?status=articleDeleted" );
 

@@ -80,9 +80,7 @@
 			onclick="if (confirm('Diesen Eintrag löschen?')) window.location.replace('admin.php?action=deleteArticle&amp;articleId=<?php echo $results['article']->id ?>') ">Diesen Eintrag löschen?</button>
 
 
-			<button id="moveToImages" onclick="window.location.replace('admin.php?action=editImages&amp;articleId=<?php echo $results['article']->id ?>')">
-				Zu Bildern wechseln
-			</button>
+			
 	
 		
 <?php } ?>	
@@ -95,6 +93,9 @@
 
 	</div>
 	<button id="showPreview">Zeige Vorschau</button>
+	<button id="moveToImages" onclick="window.location.replace('admin.php?action=editImages&amp;articleId=<?php echo $results['article']->id ?>')">
+				Zu Bildern wechseln
+		</button>
 </div>
 
 

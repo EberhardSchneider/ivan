@@ -32,6 +32,7 @@ nav {
 
 
 .currentPage {
+	display: none;
 	font-size: 1.5em;
 	position: absolute;
 	left: 35%;
@@ -70,7 +71,6 @@ nav {
 	overflow: hidden;
 	left: 0;
 	right: 0;
-	height: 100%;
 	width: 28em;
 	float: left;
 
@@ -85,12 +85,13 @@ nav {
 	left:0;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }	
 
 .preview {
 	display: inline-block;
 	position: absolute;
-	width: 40%;
+	width: 50em;
 	height: 100%;
 	right: 0%;
 	
@@ -99,20 +100,20 @@ nav {
 }
 
 .wrap-iframe {
-	left: -15em;
-	top: -5em;
+	left: -21em;
+	top: -4em;
 	position: relative;
 	float: left;
-	width: 30em;
+	width: 35em;
 	height: 17.5em;
 
 	padding: 0;
 }
 
-iframe {
+.preview iframe {
 	position: relative;
-	width: 60em;
-	height: 35em;
+	width: 84em;
+	height: 44em;
 	@include transform( scale( 0.5 ));
 	//@include transform-origin(0,0);
 	border: 2px solid black;	
@@ -160,11 +161,15 @@ iframe {
 
 		.portrait.image-large {
 			display: block;
+
+			
 			height: 80%;
 			width: auto;
 		}
 		.landscape.image-large {
 			display: block;
+
+			margin: .5em;
 			width: 100%;
 			height: auto;
 		}
@@ -187,26 +192,32 @@ img {
 		}
 
 		.portrait.image-medium {
-			height: 40em;
+			height: 35em;
 			width: auto;
 			display: block;
+
+			margin: 1em;
 		}
 
 		.landscape.image-medium {
-			width: 40em;
+			width: 30em;
 			height: auto;
 			display: block;
 		}
 
 		.portrait.image-large {
-			height: 80%;
+			height: 60%;
 			width: auto;
 			display: block;
+		
+			margin: 2em;
 		}
 		.landscape.image-large {
 			width: 100%;
 			height: auto;
 			display: block;
+
+			margin: .5em;
 		}
 
 nav {
@@ -234,10 +245,14 @@ nav {
 	margin: 5em 2em 6em;
 
 	ul {
-		list-style: square;
+		list-style: disc;
 	}
 	li {
-		margin-bottom: 1em;
+		margin-bottom: .8em;
+		padding: .2em;
+		&:hover {
+			background-color: #eee;
+		}
 	}
 }
 
@@ -284,9 +299,9 @@ nav {
 
 .adminHeader {
 	position: absolute;
-	left: 7%;
+	left: 2%;
 	top: 33%;
-	width: 15%;
+	width: 13%;
 	font-size: 1.2em;
 }
 

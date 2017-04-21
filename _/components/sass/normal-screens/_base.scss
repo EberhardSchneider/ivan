@@ -3,6 +3,7 @@
 body {
 
 	@include box-sizing(border-box);
+	@include font-smoothing( antialiased );
 
 	font-family: Verdana, sans-serif;
 	font-size: 16px;
@@ -44,4 +45,21 @@ body {
 	z-index: 255;
 }
 
+button {
+	border-radius: 3px;
+	background-color: #fffcef;
+	outline: none;
+	border: 2px solid #aaa;
+	padding: 0.3em;
 
+	&:hover {
+		background-color: #dbd8ce;
+	}
+}
+
+	input[type=submit] {
+		background-color:#fffcef;
+		&:hover {
+			background-color: #dbd8ce;
+		}
+	}

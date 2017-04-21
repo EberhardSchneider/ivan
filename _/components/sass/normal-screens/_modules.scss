@@ -20,7 +20,7 @@
 		margin-bottom: 1em;
 	}
 	h3 {
-		font-size: 0.9em;
+		font-size: 1.4em;
 		margin-top: 1.3em;
 	}
 
@@ -33,6 +33,11 @@
 	.title {
 		font-size: 1.6em;
 		margin-bottom: 3em;
+	}
+
+	iframe {
+		display: inline-block;
+		
 	}
 }
 
@@ -77,12 +82,12 @@ nav {
 			width: 16em;
 		}
 		&#publicationDate {
-			width: 6em;
+			width: 14em;
 		}
 
 	}
 
-	input, textarea {
+	input[type=text], input[type=date],  select, textarea {
 		margin-bottom: 1em;
 		background-color: #e0eaf1;
 		border-radius: 3px;
@@ -95,34 +100,40 @@ nav {
 		float: left;
 		width: 30em;
 		height: 30em;
-
 	}
 
-	.page-radiobuttons {
-		font-size: .7em;
-		display: block;
-		margin-bottom: 2em;
-		
 
-		.page-radiobutton {
-				display: inline-block;
-				padding: 0 .7em;
-				
-				input {
-					margin-bottom: 0 !important;
-				}
 
-			}
-			/*.input-wrapper input {
-				width: 1em;
-				left: 50%;
-				position: relative;
-				transform: translate(.5em, 0);
-			}*/
-			.input-wrapper {
+	button {
+		border-radius: 3px;
+		outline: none;
+		border: 2px solid #aaa;
+		padding: 0.3em;
+	}
+
+
+
+	
+
+
+	.input-wrapper {
 				text-align: center;
 			}
 	}
+
+
+button#moveToImages {
+	position: fixed;
+	bottom: 3em;
+	right: 5em;
+}
+
+button#showPreview {
+	position: fixed;
+	top: 40em;
+	right: 20em;
+}
+
 
 	// images
 	.image-thumbs {
@@ -141,17 +152,7 @@ nav {
 		}
 	}
 
-	/**.image-options{
-		display: none;
-	}
 
-	input[type=checkbox]:checked ~ .image-options {
-		display: inline-block;
-		width: 60%;
-		float: right;
-	} **/
-
-}
 
 	.image-options {
 		font-size: 0.6em;

@@ -1,0 +1,65 @@
+// some basic specifications
+
+body {
+
+	@include box-sizing(border-box);
+	@include font-smoothing( antialiased );
+
+	font-family: Verdana, sans-serif;
+	font-size: 16px;
+	a {
+		text-decoration: none;
+		color: black;
+		&:visited {
+			color: black;
+		}
+	}
+	b {
+		font-weight: bold;
+	}
+	h1 {
+		font-size: 1.9em;
+	}
+	h2 {
+		font-size: 1.6em;
+	}
+	h3 {
+		font-size: 1.3em;
+	}
+}
+
+
+.spacerhalfem {
+	position: relative;
+	background-color: #fff;
+	display: block;
+	height: .5em;
+	z-index: 255;
+}
+
+.spacer1em {
+	position: relative;
+	background-color: #fff;
+	display: block;
+	height: 1em;
+	z-index: 255;
+}
+
+button {
+	border-radius: 3px;
+	background-color: #fffcef;
+	outline: none;
+	border: 2px solid #aaa;
+	padding: 0.3em;
+
+	&:hover {
+		background-color: #dbd8ce;
+	}
+}
+
+	input[type=submit] {
+		background-color:#fffcef;
+		&:hover {
+			background-color: #dbd8ce;
+		}
+	}

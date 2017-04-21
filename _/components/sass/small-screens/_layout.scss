@@ -120,9 +120,9 @@ nav {
 .login-form {
 	position: absolute;
 	top: 8em;
-	width: 80%;
+	width: 70%;
 
-	margin: 20px auto;
+	margin: 20px 10%;
     padding: 40px 20px;
     overflow: auto;
     background: #ccc;
@@ -133,6 +133,18 @@ nav {
     -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
     -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
     box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+
+    label {
+    	display: inline-block;
+    	margin: 1em auto 0.1em;
+    }
+
+    input {
+    	outline: none;
+    	border-radius: 5px;
+    	padding: 4px;
+    	border: 2px solid #ddd;
+    }
 
 }
 

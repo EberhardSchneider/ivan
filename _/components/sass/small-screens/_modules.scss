@@ -7,6 +7,7 @@
 //  *************** Content
 
 .article {
+	font-size: .8em;
 	padding: 0.4em;
 	border-top: 2px solid #ddd;
 	h2 {
@@ -19,8 +20,9 @@
 	}
 
 	p {
-		margin-top: 0.5em;
-		line-height: 1.2em;
+		margin: 0.5em .5em 0 .5em;
+		line-height: 1.3em;
+		text-align: justify;
 	}
 
 	.title {
@@ -31,7 +33,50 @@
 
 }
 
+// IMAGES
 
+img {
+	float: right;
+	margin: .5em;
+	display: block;
+}
+
+	.portrait.image-small {
+			height: 8em;
+			width: auto;
+		}
+
+		.landscape.image-small {
+			width: 8em;
+			height: auto;
+		}
+
+		.portrait.image-medium {
+			height: 11em;
+			width: auto;
+			display: block;
+		}
+
+		.landscape.image-medium {
+			width: 11em;
+			height: auto;
+			display: block;
+		}
+
+		.portrait.image-large {
+			height: 60%;
+			width: auto;
+			display: block;
+
+			margin: 2em;
+		}
+		.landscape.image-large {
+			width: 100%;
+			height: auto;
+			display: block;
+
+			margin: .5em;
+		}
 
 
 // SIDE-MENU
